@@ -19,6 +19,7 @@ body {
   color: var(--color-body);
   font-size: 2.4rem;
   line-height: 1.5;
+  background: linear-gradient(90deg, rgb(3, 1, 28) 0%, rgb(0, 0, 0) 100%);
 }
 
 h1,
@@ -151,6 +152,7 @@ a {
   overflow: visible;
   opacity: 1;
 }
+
 /* nav bar styling */
 /* *********************/
 .nav {
@@ -249,4 +251,135 @@ a {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/* hero section styling */
+/* .frame {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.frame .div {
+  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(180deg, rgb(4.68, 1.84, 37.39) 0%, rgb(0, 0, 0) 100%);
+  width: 1728px;
+  height: 1117px;
+  position: relative;
+} */
+
+.frame .ellipse {
+  position: absolute;
+  width: 386px;
+  height: 386px;
+  top: 109px;
+  left: 96px;
+  object-fit: cover;
+}
+
+.frame .i-m-shavin-anjitha {
+  position: absolute;
+  top: 215px;
+  left: 590px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: transparent;
+  font-size: 90px;
+  letter-spacing: 0.9px;
+  line-height: normal;
+}
+
+.frame .text-wrapper {
+  color: #ffffff;
+}
+
+.frame .span {
+  color: #33bede;
+}
+
+.frame .text-wrapper-2 {
+  position: absolute;
+  top: 118px;
+  left: 590px;
+  background: linear-gradient(
+    180deg,
+    rgb(25.35, 218.87, 218.87) 0%,
+    rgb(100.6, 136.57, 229.08) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: transparent;
+  font-size: 80px;
+  letter-spacing: 0.8px;
+  line-height: normal;
+}
+
+.frame .text-wrapper-3 {
+  position: absolute;
+  top: 324px;
+  left: 590px;
+  background: linear-gradient(
+    180deg,
+    rgb(232.89, 224.41, 20.96) 25.52%,
+    rgb(60.97, 245.64, 30.91) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: transparent;
+  font-size: 80px;
+  letter-spacing: 4px;
+  line-height: normal;
+}
+
+.frame .overlap-group {
+  position: absolute;
+  width: 1017px;
+  height: 151px;
+  top: 483px;
+  left: 590px;
+}
+
+.frame .p {
+  position: absolute;
+  width: 1017px;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #c7bebe;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  line-height: normal;
+}
+
+.frame .component {
+  position: absolute;
+  width: 225px;
+  height: 60px;
+  top: 91px;
+  left: 0;
+  background-color: #33bede;
+  border-radius: 30px;
+}
+
+.frame .text-wrapper-4 {
+  position: absolute;
+  top: 14px;
+  left: 64px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  line-height: normal;
 }
