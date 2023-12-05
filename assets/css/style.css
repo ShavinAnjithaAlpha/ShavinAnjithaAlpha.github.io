@@ -13,13 +13,13 @@ html {
 
 body {
   /* font-family: Roboto, Arial, Helvetica, sans-serif; */
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  font-family: "Poppins", "Helvetica Neue", "Noto Sans", "Liberation Sans",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
   color: var(--color-body);
   font-size: 2.4rem;
   line-height: 1.5;
-  background: linear-gradient(90deg, rgb(3, 1, 28) 0%, rgb(0, 0, 0) 100%);
+  background-color: black;
 }
 
 h1,
@@ -156,7 +156,8 @@ a {
 /* nav bar styling */
 /* *********************/
 .nav {
-  background: black;
+  /* position: fixed; */
+  background: rgb(0, 0, 10);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -254,8 +255,7 @@ a {
 }
 
 /* hero section styling */
-/* .frame {
-  background-color: rgba(255, 255, 255, 1);
+.frame {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -263,12 +263,10 @@ a {
 }
 
 .frame .div {
-  background-color: rgba(255, 255, 255, 1);
-  background: linear-gradient(180deg, rgb(4.68, 1.84, 37.39) 0%, rgb(0, 0, 0) 100%);
   width: 1728px;
-  height: 1117px;
+  height: 800px;
   position: relative;
-} */
+}
 
 .frame .ellipse {
   position: absolute;
@@ -357,7 +355,7 @@ a {
   font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   color: #c7bebe;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 1.2px;
   line-height: normal;
 }
@@ -382,4 +380,81 @@ a {
   font-size: 24px;
   letter-spacing: 1.2px;
   line-height: normal;
+}
+
+/* hero section styling */
+/* *********************/
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.hero .hero__profile {
+  margin: 20px 100px;
+}
+
+.hero .ellipse {
+  width: 386px;
+  height: 386px;
+  object-fit: cover;
+}
+
+.hero .text-wrapper-2 {
+  background: linear-gradient(
+    180deg,
+    rgb(25.35, 218.87, 218.87) 0%,
+    rgb(100.6, 136.57, 229.08) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-weight: 800;
+  color: transparent;
+  font-size: 65px;
+  letter-spacing: 0.8px;
+  line-height: normal;
+}
+
+.hero .i-m-shavin-anjitha {
+  font-size: 90px;
+  letter-spacing: 0.9px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.hero .span {
+  color: rgb(25.35, 218.87, 218.87);
+}
+
+.hero .text-wrapper-3 {
+  background: linear-gradient(
+    180deg,
+    rgb(25.35, 218.87, 218.87) 0%,
+    rgb(100.6, 136.57, 229.08) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-weight: 800;
+  color: transparent;
+  font-size: 80px;
+  letter-spacing: 4px;
+  line-height: normal;
+}
+
+.hero .hero__description {
+  margin: 40px 0;
+  min-width: 70%;
+  padding-right: 5rem;
+}
+
+.hero .hero__description p {
+  color: #c7bebe;
+  font-weight: 400;
+  line-height: 1.5;
 }
