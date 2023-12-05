@@ -278,6 +278,7 @@ a {
   width: 386px;
   height: 386px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .hero .hero__title {
