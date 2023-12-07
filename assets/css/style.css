@@ -70,6 +70,13 @@ p {
 ul {
   list-style: none;
 }
+/* global elements */
+
+.spacer {
+  min-height: 100vh;
+}
+
+/* end of global elements */
 
 /* Links */
 /* *********************/
@@ -410,6 +417,11 @@ section#about-me {
   padding: 20px 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   height: 100vh;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 100, 1) 0%,
+    rgb(0, 0, 0, 1) 100%
+  );
 }
 
 .about-me .about-me__title h2 {
@@ -630,7 +642,7 @@ section#services .services__title h1::after {
   bottom: -10px; /* adjust as needed */
   left: 0;
   width: 0;
-  height: 2px;
+  height: 10px;
   background: #fff; /* color of the underline */
   transition: width 0.3s;
 }

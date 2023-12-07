@@ -99,9 +99,11 @@ gsap.fromTo(
   }
 );
 
+// horiozontal scroll animation for services section
 const slider = document.querySelector(".slider");
 const sections = gsap.utils.toArray(".slider section");
 
+// create a timeline for all our sections and then add it to the scrollTrigger
 let t1 = gsap.timeline({
   defaults: {
     ease: "none",
@@ -116,6 +118,7 @@ let t1 = gsap.timeline({
   },
 });
 
+// animate the container one way...
 t1.to(
   sections,
   {
@@ -124,6 +127,7 @@ t1.to(
   "<"
 );
 
+// animate the content in the text section of each service section
 sections.forEach((stop, index) => {
   t1.from(stop.querySelector(".col .content"), {
     yPercent: -50,
@@ -152,6 +156,42 @@ sections.forEach((stop, index) => {
   );
 });
 
+// service section title parallelX animation
+// select the title element
+const heading = document.querySelector(".services__title h1");
+// split the heading into characters
+const headingSplit = new SplitType(heading);
+
+const letters = heading.querySelectorAll(".char");
+
+function getRandom(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// animate the letters
+letters.forEach((letter, index) => {
+  const randomYPercent = getRandom(70, 1100);
+
+  gsap.fromTo(
+    letter,
+    {
+      yPercent: -randomYPercent,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: heading,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+      },
+    }
+  );
+});
+
+// for smoother scrolling experience
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {
