@@ -685,11 +685,16 @@ section#services .services__title h1:hover::after {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   transform: translate(-50%, -50%);
   pointer-events: none;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 60px 60px rgba(0, 0, 60, 0.5);
   animation: scaleInOut 1s infinite;
+  background: linear-gradient(
+    rgba(0, 0, 100, 0.8) 0%,
+    rgba(0, 0, 150, 0.8) 50%,
+    rgba(0, 0, 250, 0.8) 100%
+  );
 }
 
 .cursor2 {
@@ -699,10 +704,9 @@ section#services .services__title h1:hover::after {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 1px solid white;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0);
   animation: scaleInOut 1s infinite;
 }
 
