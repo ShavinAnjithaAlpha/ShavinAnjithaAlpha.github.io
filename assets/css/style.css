@@ -11,6 +11,17 @@ html {
   font-size: 62.5%;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
 body {
   background-color: rgb(0, 0, 0);
   background-image: url("assets/img/bg-3.jpg");
@@ -275,7 +286,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
 }
 .hero .hero__profile {
@@ -613,27 +624,41 @@ section#services {
     rgba(0, 0, 100, 1) 0%,
     rgb(0, 0, 0, 1) 100%
   );
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-section#services .services__title {
-  position: relative;
+section#services .services_sub_title {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 
-section#services .services__title h1 {
-  font-size: 25rem;
-  font-weight: 900;
-  color: #ffffff;
-  margin: 0;
+section#services .services_sub_title h3 {
+  margin: auto;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #33bede;
+}
+
+section#services .services__title {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
   margin: auto;
 }
 
 section#services .services__title h1 {
+  font-size: 20rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  margin: auto;
   position: relative;
-  /* other styles */
 }
 
 section#services .services__title h1::after {
@@ -650,3 +675,62 @@ section#services .services__title h1::after {
 section#services .services__title h1:hover::after {
   width: 100%;
 }
+
+/* cursor styling */
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+  animation: scaleInOut 1s infinite;
+}
+
+.cursor2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 1);
+  animation: scaleInOut 1s infinite;
+}
+
+.cursor-content:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes scaleInOut {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes clickedColor {
+  0%,
+  100% {
+    background-color: transparent;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* end of cursor styling */

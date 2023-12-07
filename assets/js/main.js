@@ -1,3 +1,22 @@
+// cursor animation
+const cursor = document.querySelector(".cursor");
+const cursor2 = document.querySelector(".cursor2");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.cssText = cursor2.style.cssText =
+    "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
+
+document.addEventListener("click", (e) => {
+  cursor.style.cssText =
+    "left: " +
+    e.clientX +
+    "px; top: " +
+    e.clientY +
+    "px;" +
+    "border: none;   animation: clickedColor 0.3s;";
+});
+
 requestAnimationFrame(raf);
 
 const collapsibles = document.querySelectorAll(".collapsible");
@@ -171,15 +190,18 @@ function getRandom(min, max) {
 // animate the letters
 letters.forEach((letter, index) => {
   const randomYPercent = getRandom(70, 1100);
+  const randomXPercent = getRandom(-1100, 1100);
 
   gsap.fromTo(
     letter,
     {
       yPercent: -randomYPercent,
+      xPercent: -randomXPercent,
       opacity: 0,
     },
     {
       yPercent: 0,
+      xPercent: 0,
       opacity: 1,
       scrollTrigger: {
         trigger: heading,
