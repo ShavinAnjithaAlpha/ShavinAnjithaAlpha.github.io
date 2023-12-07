@@ -269,6 +269,7 @@ a {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  min-height: 100vh;
 }
 .hero .hero__profile {
   margin: 20px 100px;
@@ -393,6 +394,10 @@ a {
 }
 
 /* About Me Section */
+section#about-me {
+  min-height: 100vh;
+}
+
 .about-me .about-me__content {
   display: flex;
   flex-direction: column;
@@ -402,6 +407,7 @@ a {
   background-color: #011013;
   padding: 20px 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  height: 100vh;
 }
 
 .about-me .about-me__title h2 {
@@ -520,4 +526,90 @@ a {
 .about-me .resume_btn:hover {
   cursor: pointer;
   background-color: #97ecff;
+}
+
+/* services slider styling */
+
+.outer {
+  overflow-x: hidden;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(1, 9, 30) 100%);
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  width: 300vw;
+  height: 100vh;
+}
+
+.slider section {
+  min-width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.slider section .inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.slider section .col {
+  width: 30%;
+  height: calc(100% - 4rem);
+  margin: 2rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider section .col img {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider section .col h2 {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #33bede;
+  line-height: 120%;
+  margin: 3.5rem 0;
+}
+
+.slider section .col p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #c7bebe;
+  line-height: 150%;
+  font-style: italic;
+}
+
+section#services {
+  height: 100vh;
+  display: flex;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 100, 0.7) 0%,
+    rgb(0, 0, 0, 0.5) 100%
+  );
+}
+
+section#services .services__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+section#services .services__title h1 {
+  font-size: 25rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  margin: auto;
 }

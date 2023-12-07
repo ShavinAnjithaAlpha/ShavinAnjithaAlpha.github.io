@@ -315,116 +315,98 @@
       </div>
     </section>
 
+    <!-- services slider -->
+    <section id="services">
+      <div class="services__title">
+        <h1>Services</h1>
+      </div>
+    </section>
+
+    <div class="outer">
+      <div class="slider">
+        <section>
+          <div class="inner">
+            <div class="col">
+              <div class="content">
+                <h2>Web Desiging</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Alias, recusandae labore vitae reprehenderit architecto
+                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
+                  magni perspiciatis quae?
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="assets/img/webdesign.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="inner">
+            <div class="col">
+              <div class="content">
+                <h2>Web Developing</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Alias, recusandae labore vitae reprehenderit architecto
+                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
+                  magni perspiciatis quae?
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="assets/img/webdev.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="inner">
+            <div class="col">
+              <div class="content">
+                <h2>App Developing</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Alias, recusandae labore vitae reprehenderit architecto
+                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
+                  magni perspiciatis quae?
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="assets/img/appdev.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="inner">
+            <div class="col">
+              <div class="content">
+                <h2>Data Modelling</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Alias, recusandae labore vitae reprehenderit architecto
+                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
+                  magni perspiciatis quae?
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="assets/img/db.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- end of services slider -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <script>
-      gsap.fromTo(
-        ".text-wrapper-2",
-        {
-          opacity: 0,
-          scale: 0,
-          y: -100,
-          rotationX: 180,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-          stagger: 0.01,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotationX: 0,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-        }
-      );
-
-      gsap.fromTo(
-        ".text-wrapper-3",
-        {
-          opacity: 0,
-          scale: 0,
-          y: -100,
-          rotationX: 180,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-          stagger: 0.01,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotationX: 0,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-        }
-      );
-
-      gsap.fromTo(
-        ".i-m-shavin-anjitha",
-        {
-          opacity: 0,
-          scale: 0,
-          y: -100,
-          rotationX: 180,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-          stagger: 0.01,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotationX: 0,
-          transformOrigin: "0% 50% -50",
-          ease: "back",
-        }
-      );
-
-      gsap.fromTo(
-        ".hero__profile",
-        { x: -500, scale: 0, opacity: 0 },
-        {
-          x: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
-
-      gsap.fromTo(
-        ".about-me__content",
-        { x: -1000 },
-        {
-          scrollTrigger: {
-            trigger: ".about-me__content",
-            start: "top 100%",
-            end: "bottom bottom",
-            markers: false,
-            scrub: 1,
-            pin: false,
-          },
-          x: 0,
-          opacity: 1,
-        }
-      );
-
-      const lenis = new Lenis();
-
-      lenis.on("scroll", (e) => {
-        console.log(e);
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
-      requestAnimationFrame(raf);
-    </script>
   </body>
 </html>
