@@ -24,8 +24,7 @@ html {
 
 body {
   background-color: rgb(0, 0, 0);
-  background-image: url("assets/img/bg-3.jpg");
-  /* font-family: Roboto, Arial, Helvetica, sans-serif; */
+  /* background: url(assets/img/bg-3.jpg); */
   font-family: "Poppins", "Helvetica Neue", "Noto Sans", "Liberation Sans",
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -710,9 +709,15 @@ section#services .services__title h1:hover::after {
   animation: scaleInOut 1s infinite;
 }
 
-.cursor-content:hover ~ .cursor {
+/* .cursor-content:hover ~ .cursor {
   transform: translate(-50%, -50%) scale(2);
   background-color: rgba(255, 255, 255, 0.5);
+} */
+
+.cursor .active {
+  /* styles when the cursor is active */
+  transform: translate(-50%, -50%) scale(2);
+  background-color: blue;
 }
 
 @keyframes scaleInOut {
@@ -738,3 +743,97 @@ section#services .services__title h1:hover::after {
 }
 
 /* end of cursor styling */
+
+/* contact-me section styling */
+
+section#contact-me {
+  position: sticky;
+  top: 0;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 100, 1) 0%,
+    rgb(0, 0, 0, 1) 100%
+  );
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+section#contact-me .contact-form {
+  width: 50%;
+  margin: 2rem 3rem;
+}
+
+section#contact-me .details {
+  width: 50%;
+  margin: 2rem 3rem;
+}
+
+/* form styling */
+/* input field styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 40%;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid #c7bebe7e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  color: #c7bebe;
+}
+
+/* Placeholder text styling */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: #c7bebe;
+  opacity: 0.7;
+}
+
+textarea {
+  width: 82%;
+  height: 25vh;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 0;
+  border: 1px solid #c7bebe7e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  color: #c7bebe;
+}
+
+input[type="submit"] {
+  background-color: #33bede;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+/* end of contact-me section styling */

@@ -17,6 +17,17 @@ document.addEventListener("click", (e) => {
     "border: none;   animation: clickedColor 0.3s;";
 });
 
+document.querySelectorAll(".cursor-content").forEach((elem) => {
+  elem.addEventListener("mouseover", function () {
+    cursor.classList.add("active");
+  });
+
+  elem.addEventListener("mouseout", function () {
+    cursor.classList.remove("active");
+    console.log("mouse out");
+  });
+});
+
 requestAnimationFrame(raf);
 
 const collapsibles = document.querySelectorAll(".collapsible");
