@@ -224,6 +224,48 @@ letters.forEach((letter, index) => {
   );
 });
 
+// contact me text animation
+const contactMeText = document.querySelector(".contact-me__title");
+const contactMeRows = gsap.utils.toArray("#contact-me .row");
+
+gsap.fromTo(
+  contactMeText,
+  {
+    opacity: 0,
+    yPercent: -100,
+  },
+  {
+    opacity: 1,
+    yPercent: 0,
+    scrollTrigger: {
+      trigger: contactMeText,
+      start: "top center",
+      end: "bottom center",
+      scrub: 1,
+    },
+  }
+);
+
+contactMeRows.forEach((row, index) => {
+  gsap.fromTo(
+    row,
+    {
+      opacity: 0,
+      x: -300,
+    },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: contactMeText,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+      },
+    }
+  );
+});
+
 // for smoother scrolling experience
 const lenis = new Lenis();
 
