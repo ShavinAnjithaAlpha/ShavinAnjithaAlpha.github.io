@@ -34,6 +34,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 h1,
@@ -374,6 +376,12 @@ a {
   line-height: normal;
 }
 
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+}
+
 .cursor {
   animation: blink 1s infinite;
 }
@@ -594,6 +602,12 @@ section#about-me {
   background-color: #97ecff;
 }
 
+@media screen and (max-width: 768px) {
+  .about-me .about-me__area {
+    flex-direction: column;
+  }
+}
+
 /* services slider styling */
 
 .outer {
@@ -715,6 +729,12 @@ section#services .services__title h1::after {
 
 section#services .services__title h1:hover::after {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  section#services .services__title h1 {
+    font-size: 12rem;
+  }
 }
 
 /* cursor styling */
