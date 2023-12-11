@@ -30,12 +30,36 @@ document.querySelectorAll(".cursor-content").forEach((elem) => {
 
 requestAnimationFrame(raf);
 
+// collapsible element animation
 const collapsibles = document.querySelectorAll(".collapsible");
 collapsibles.forEach((item) =>
   item.addEventListener("click", function () {
     this.classList.toggle("collapsible--expanded");
   })
 );
+
+// nav bar styling change on scroll
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector(".nav");
+  if (window.scrollY > 100) {
+    nav.classList.add("scrolling");
+  } else {
+    nav.classList.remove("scrolling");
+  }
+});
+
+// // hero section backgrond gradient animation
+// const hero = document.querySelector(".hero");
+// hero.addEventListener("mousemove", function (e) {
+//   var x = e.clientX;
+//   var y = e.clientY;
+//   document.body.style.background =
+//     "radial-gradient(circle at " +
+//     x +
+//     "px " +
+//     y +
+//     "px, rgba(0, 0, 30, 1) 0%, rgb(0, 0, 0, 1) 50%)";
+// });
 
 gsap.fromTo(
   ".text-wrapper-2",
