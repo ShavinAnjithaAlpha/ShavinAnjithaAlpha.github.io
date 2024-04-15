@@ -3,10 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The SLIoT Challenge is a competition that aims to provide a platform for students to showcase their innovative ideas and solutions in the field of Internet of Things (IoT). The competition is open to all undergraduate students from universities and higher education institutes in Sri Lanka."
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="keywords"
+      content="SHavin, Shavin Anjitha, Shavin Anjitha Chandrawansha, Chandrawansha, Portfolio, UoM, WebDeveloper, Software Enginner, Undergraduate"
+    />
+    <meta name="author" content="Shavin Anjitha" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="og:title" content="Shavin Anjitha Portfolio" />
+    <meta
+      name="og:description"
+      content="I'm a Web Developer who loves to create beautiful and responsive websites. I'm also a student at  University of Moratuwa, Sri Lanka."
+    />
+    <meta name="og:image" content="/assets/img/logo/sliot-logo.png" />
+    <meta name="og:url" content="https://shavin.live" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
 
@@ -18,489 +42,283 @@
       media="screen"
     />
 
-    <title>ShavinAnjithaAlpha</title>
+    <title>Shavin Anjitha</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png" />
   </head>
-  <body>
-    <nav class="nav collapsible">
-      <a href="/">
-        <!-- <img src="assets/img/logo.png" alt="" /> -->
-        <h2 class="nav__logo">SA</h2>
-      </a>
-      <!-- toggler button -->
-      <svg class="icon icon__primary nav__toggler">
-        <use xlink:href="assets/img/sprite.svg#menu"></use>
-      </svg>
-      <ul class="list nav__list collapsible__content">
-        <li class="nav__item">
-          <a class="hover-underline-animation" href="#">Home</a>
-        </li>
-        <li class="nav__item">
-          <a class="hover-underline-animation" href="#about-me">About</a>
-        </li>
-        <li class="nav__item">
-          <a class="hover-underline-animation" href="#">Services</a>
-        </li>
-        <li class="nav__item">
-          <a class="hover-underline-animation" href="#">Projects</a>
-        </li>
-        <li class="nav__item">
-          <a class="hover-underline-animation" href="#">Contact</a>
-        </li>
-      </ul>
+  <body style="background-image: url('assets/img/stars.jpg')">
+    <nav>
+      <div class="nav-container">
+        <div class="logo cursor-scale small">
+          <img
+            src="assets/img/profile-ellipse.png"
+            alt="Profile Picture"
+            width="40"
+          />
+        </div>
+        <button class="nav-toggler" id="nav-toggler">
+          <svg
+            id="light"
+            enable-background="new 0 0 24 24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="white"
+          >
+            <g>
+              <path
+                d="m21.5 24h-19c-1.379 0-2.5-1.122-2.5-2.5v-19c0-1.378 1.121-2.5 2.5-2.5h19c1.379 0 2.5 1.122 2.5 2.5v19c0 1.378-1.121 2.5-2.5 2.5zm-19-23c-.827 0-1.5.673-1.5 1.5v19c0 .827.673 1.5 1.5 1.5h19c.827 0 1.5-.673 1.5-1.5v-19c0-.827-.673-1.5-1.5-1.5z"
+              />
+            </g>
+            <g>
+              <path
+                d="m16.5 8h-9c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h9c.276 0 .5.224.5.5s-.224.5-.5.5z"
+              />
+            </g>
+            <g>
+              <path
+                d="m16.5 12.5h-9c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h9c.276 0 .5.224.5.5s-.224.5-.5.5z"
+              />
+            </g>
+            <g>
+              <path
+                d="m16.5 17h-9c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h9c.276 0 .5.224.5.5s-.224.5-.5.5z"
+              />
+            </g>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a link="#home" class="active">Home</a></li>
+          <li><a href="aboutme">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a link="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-
-    <section class="hero">
-      <div class="hero__profile">
-        <img class="ellipse" src="assets/img/profile.png" />
-        <div class="links_bar">
-          <a
-            href="https://web.facebook.com/shavin.anjitha.chandrawansha"
-            class="icon"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="40"
-              height="40"
-              viewBox="0,0,256,256"
-              style="fill: #000000"
-            >
-              <g
-                fill="#555555"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(10.66667,10.66667)">
-                  <path
-                    d="M12,2c-5.523,0 -10,4.477 -10,10c0,5.013 3.693,9.153 8.505,9.876v-7.226h-2.474v-2.629h2.474v-1.749c0,-2.896 1.411,-4.167 3.818,-4.167c1.153,0 1.762,0.085 2.051,0.124v2.294h-1.642c-1.022,0 -1.379,0.969 -1.379,2.061v1.437h2.995l-0.406,2.629h-2.588v7.247c4.881,-0.661 8.646,-4.835 8.646,-9.897c0,-5.523 -4.477,-10 -10,-10z"
-                  ></path>
-                </g>
-              </g></svg
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/shavin-anjitha-chandrawansha-555323229/"
-            class="icon"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="40"
-              height="40"
-              viewBox="0,0,256,256"
-              style="fill: #000000"
-            >
-              <g
-                fill="#555555"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(10.66667,10.66667)">
-                  <path
-                    d="M19,3h-14c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h14c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2zM9,17h-2.523v-7h2.523zM7.694,8.717c-0.771,0 -1.286,-0.514 -1.286,-1.2c0,-0.686 0.514,-1.2 1.371,-1.2c0.771,0 1.286,0.514 1.286,1.2c0,0.686 -0.514,1.2 -1.371,1.2zM18,17h-2.442v-3.826c0,-1.058 -0.651,-1.302 -0.895,-1.302c-0.244,0 -1.058,0.163 -1.058,1.302c0,0.163 0,3.826 0,3.826h-2.523v-7h2.523v0.977c0.325,-0.57 0.976,-0.977 2.197,-0.977c1.221,0 2.198,0.977 2.198,3.174z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a href="https://github.com/ShavinAnjithaAlpha" class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="39"
-              height="39"
-              viewBox="0,0,256,256"
-              style="fill: #000000"
-            >
-              <g
-                fill="#555555"
-                fill-rule="evenodd"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(8,8)">
-                  <path
-                    d="M16,4c-6.62891,0 -12,5.37109 -12,12c0,5.30078 3.4375,9.80078 8.20703,11.38672c0.60156,0.10938 0.82031,-0.25781 0.82031,-0.57812c0,-0.28516 -0.01172,-1.03906 -0.01562,-2.03906c-3.33984,0.72266 -4.04297,-1.60937 -4.04297,-1.60937c-0.54687,-1.38672 -1.33203,-1.75781 -1.33203,-1.75781c-1.08984,-0.74219 0.08203,-0.72656 0.08203,-0.72656c1.20313,0.08594 1.83594,1.23438 1.83594,1.23438c1.07031,1.83594 2.80859,1.30469 3.49219,1c0.10938,-0.77734 0.42188,-1.30469 0.76172,-1.60547c-2.66406,-0.30078 -5.46484,-1.33203 -5.46484,-5.92969c0,-1.3125 0.46875,-2.38281 1.23438,-3.22266c-0.12109,-0.30078 -0.53516,-1.52344 0.11719,-3.17578c0,0 1.00781,-0.32031 3.30078,1.23047c0.95703,-0.26562 1.98438,-0.39844 3.00391,-0.40234c1.01953,0.00391 2.04688,0.13672 3.00391,0.40234c2.29297,-1.55078 3.29688,-1.23047 3.29688,-1.23047c0.65625,1.65234 0.24609,2.875 0.12109,3.17578c0.76953,0.83984 1.23047,1.91016 1.23047,3.22266c0,4.60938 -2.80469,5.62109 -5.47656,5.92188c0.42969,0.36719 0.8125,1.10156 0.8125,2.21875c0,1.60547 -0.01172,2.89844 -0.01172,3.29297c0,0.32031 0.21484,0.69531 0.82422,0.57813c4.76563,-1.58984 8.19922,-6.08594 8.19922,-11.38672c0,-6.62891 -5.37109,-12 -12,-12z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a href="https://medium.com/@shavinanjitha" class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="40"
-              height="40"
-              viewBox="0,0,256,256"
-              style="fill: #000000"
-            >
-              <g
-                fill="#555555"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(4,4)">
-                  <path
-                    d="M18.99805,15c-9.37431,0.02204 -16.96202,7.62762 -16.96202,17.00195c0,9.37434 7.58771,16.97991 16.96202,17.00195c9.37431,-0.02204 16.96202,-7.62762 16.96202,-17.00195c0,-9.37434 -7.58771,-16.97991 -16.96202,-17.00195zM45.49805,16c-4.68747,0.02138 -8.48139,7.17943 -8.48139,16.00195c0,8.82252 3.79393,15.98057 8.48139,16.00195c4.68747,-0.02138 8.48139,-7.17943 8.48139,-16.00195c0,-8.82252 -3.79393,-15.98057 -8.48139,-16.00195zM58.5,17c-1.25251,-0.01344 -2.41123,2.84297 -3.03839,7.49012c-0.62716,4.64714 -0.62716,10.37654 0,15.02368c0.62716,4.64714 1.78588,7.50355 3.03839,7.49012c1.25251,0.01344 2.41123,-2.84297 3.03839,-7.49012c0.62716,-4.64714 0.62716,-10.37654 0,-15.02368c-0.62716,-4.64714 -1.78588,-7.50355 -3.03839,-7.49012z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/shavin_anjitha/" class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="40"
-              height="40"
-              viewBox="0,0,256,256"
-              style="fill: #000000"
-            >
-              <g
-                fill="#555555"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(10.66667,10.66667)">
-                  <path
-                    d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="hero__content">
-        <div class="hero__title">
-          <div class="text-wrapper-2">Hello</div>
-          <p class="i-m-shavin-anjitha cursor-content">
-            <span class="text-wrapper">I’m </span>
-            <span class="span">Shavin</span>
-            <span class="text-wrapper"> Anjitha</span>
-          </p>
-          <div class="text-wrapper-3 typing">Developer</div>
-        </div>
-        <div class="hero__description">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            hic aspernatur reiciendis laudantium ad accusamus aperiam minima
-            impedit quod assumenda sint consequatur iure enim possimus dolor
-            eius, vel saepe incidunt, maxime alias error repellendus ipsum
-            eligendi repellat. Eveniet, quam consequuntur.
-          </p>
-        </div>
-        <button class="resume_btn">Resume</button>
-      </div>
-    </section>
-
-    <!-- about me section -->
-    <section class="about-me" id="about-me">
-      <div class="about-me__content">
-        <div class="about-me__title">
-          <h2>About Me</h2>
-        </div>
-
-        <div class="about-me__area">
-          <div class="col">
-            <div class="about-me__profile">
-              <img src="assets/img/profile.png" alt="" />
+    <div class="body-wrapper">
+      <section id="home">
+        <div class="grid-2">
+          <div class="left">
+            <div class="left-container">
+              <h1 class="cursor-scale">Shavin Anjitha</h1>
+              <p class="cursor-scale">Web Developer</p>
+              <a href="#contact" class="cursor-scale contact-btn">Contact Me</a>
             </div>
           </div>
-          <div class="col">
-            <div class="about-me__phrase">
-              <h2>A Passionate Developer Who Loves To Build</h2>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates sequi quisquam minima obcaecati ex maiores amet a eius.
-              Sit eum minus, dolorem dolores praesentium eius nobis blanditiis
-              iusto quo vel temporibus voluptatibus soluta modi voluptate a
-              nesciunt accusamus cupiditate? Corrupti aliquid ea dignissimos ut
-              quod rem cumque non debitis neque. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Illum ut blanditiis perferendis
-              consectetur cum, nemo quod suscipit modi eaque non?Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit. At excepturi itaque
-              similique cum atque ex provident quo totam, necessitatibus
-              aliquid!
-            </p>
-            <button class="resume_btn">Resume</button>
-          </div>
-          <div class="col">
-            <div class="list-box">
-              <ul>
-                <li>
-                  <span>Name</span>
-                  <br />
-                  Shavin Anjitha Chandrawansha
-                </li>
-                <li>
-                  <span>Address</span>
-                  <br />
-                  No 6, Sea Beach Rd, Ambalangoda, Sri Lanka
-                </li>
-                <li>
-                  <span>Education</span>
-                  <br />
-                  Bsc Eng. of Computer Science and Engineering Degree,
-                  University of Moratuwa
-                </li>
-                <li>
-                  <span>Email</span>
-                  <br />
-                  shavinanjithachandrawansha@gmail.com
-                </li>
-                <li>
-                  <span>Contact Number</span>
-                  <br />
-                  +94 77 854 2602
-                </li>
-              </ul>
+          <div class="right">
+            <div class="right-container">
+              <img
+                src="assets/img/profile-ellipse.png"
+                alt="Profile Picture"
+                width="300"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- services slider -->
-    <section class="spacer"></section>
-    <section id="services">
-      <div class="services_sub_title">
-        <h3>What I Do for My Clients</h3>
-      </div>
-      <div class="services__title cursor-content">
-        <h1>Services</h1>
-      </div>
-    </section>
-    <section class="spacer"></section>
+      <section id="aboutme"></section>
 
-    <div class="outer">
-      <div class="slider">
-        <section>
-          <div class="inner">
-            <div class="col">
-              <div class="content">
-                <h2>Web Desiging</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Alias, recusandae labore vitae reprehenderit architecto
-                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
-                  magni perspiciatis quae?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <img src="assets/img/webdesign.png" alt="" />
+      <section id="skills"></section>
+
+      <section id="projects">
+        <div class="project-grid grid-3">
+          <!-- project card 1 -->
+          <div class="project-card"></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <p>Contact Me</p>
+        <h3>Reach out for a new project or to say hello</h3>
+
+        <div class="contact-container">
+          <div class="right">
+            <form
+              action="https://send.pageclip.co/lCNZ6N6zuaR1cA2uF4xLPN46teklypFm/game-of-life"
+              class="pageclip-form"
+              method="POST"
+            >
+              <p>Send Me A Message</p>
+              <!-- <label for="name">Name</label> -->
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your Name"
+              />
+              <!-- <label for="email">Email</label> -->
+              <input
+                type="email"
+                id="email"
+                name="_replyto"
+                required
+                placeholder="Your Email"
+              />
+              <!-- <label for="message">Message</label> -->
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                required
+                rows="8"
+              ></textarea>
+              <button type="submit" class="button pageclip-form__submit">
+                Submit
+              </button>
+            </form>
+          </div>
+
+          <div class="left">
+            <h3>Email Me At</h3>
+            <a href="mailto:shavinanjitha.ch@gmail.com"
+              >shavinanjitha.ch@gmail.com</a
+            >
+            <h3>Find Me On</h3>
+            <div class="contact-links">
+              <a
+                ><i class="fab fa-linkedin">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0,0,256,256"
+                  >
+                    <g
+                      fill="#777777"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(10.66667,10.66667)">
+                        <path
+                          d="M19,3h-14c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h14c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2zM9,17h-2.523v-7h2.523zM7.694,8.717c-0.771,0 -1.286,-0.514 -1.286,-1.2c0,-0.686 0.514,-1.2 1.371,-1.2c0.771,0 1.286,0.514 1.286,1.2c0,0.686 -0.514,1.2 -1.371,1.2zM18,17h-2.442v-3.826c0,-1.058 -0.651,-1.302 -0.895,-1.302c-0.244,0 -1.058,0.163 -1.058,1.302c0,0.163 0,3.826 0,3.826h-2.523v-7h2.523v0.977c0.325,-0.57 0.976,-0.977 2.197,-0.977c1.221,0 2.198,0.977 2.198,3.174z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg> </i
+              ></a>
+              <a
+                ><i class="fab fa-github">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0,0,256,256"
+                  >
+                    <g
+                      fill="#777777"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(10.66667,10.66667)">
+                        <path
+                          d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.5,4.7 2.2,8.9 6.3,10.5c0.3,0.1 0.6,-0.1 0.6,-0.5v-1.6c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v2.6c0,0.3 0.3,0.6 0.7,0.5c3.7,-1.5 6.3,-5.1 6.3,-9.3c0,-6 -5.1,-10.7 -11.1,-10z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg> </i
+              ></a>
+              <a
+                ><i class="fab fa-codepen">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0,0,256,256"
+                  >
+                    <g
+                      fill="#777777"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(10.66667,10.66667)">
+                        <path
+                          d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg> </i
+              ></a>
+              <a href=""
+                ><i class="fab fa-twitter">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0,0,256,256"
+                  >
+                    <g
+                      fill="#777777"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(10.66667,10.66667)">
+                        <path
+                          d="M2.36719,3l7.0957,10.14063l-6.72266,7.85938h2.64063l5.26367,-6.16992l4.31641,6.16992h6.91016l-7.42187,-10.625l6.29102,-7.375h-2.59961l-4.86914,5.6875l-3.97266,-5.6875zM6.20703,5h2.04883l9.77734,14h-2.03125z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg> </i
+              ></a>
             </div>
           </div>
-        </section>
-
-        <section>
-          <div class="inner">
-            <div class="col">
-              <div class="content">
-                <h2>Web Developing</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Alias, recusandae labore vitae reprehenderit architecto
-                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
-                  magni perspiciatis quae?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <img src="assets/img/webdev.png" alt="" />
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="inner">
-            <div class="col">
-              <div class="content">
-                <h2>App Developing</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Alias, recusandae labore vitae reprehenderit architecto
-                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
-                  magni perspiciatis quae?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <img src="assets/img/appdev.png" alt="" />
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="inner">
-            <div class="col">
-              <div class="content">
-                <h2>Data Modelling</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Alias, recusandae labore vitae reprehenderit architecto
-                  praesentium ullam quos distinctio! Quasi molestiae quam nemo,
-                  magni perspiciatis quae?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <img src="assets/img/db.png" alt="" />
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
-
-    <!-- end of services slider -->
-
-    <!-- contact me section  -->
-
-    <section id="contact-me">
-      <div class="contact-me__title">
-        <h2>Contact Me</h2>
-        <h3>I Want to Hear from You</h3>
-      </div>
-      <div class="form-container">
-        <div class="details">
-          <div class="row">
-            <img src="assets/icons/search.svg" alt="" width="45px" />
-            <div class="line-box">
-              <h3>Address</h3>
-              <p>No 6, Sea Beach Rd, Ambalangoda</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <img src="assets/icons/search.svg" alt="" width="45px" />
-            <div class="line-box">
-              <h3>Email</h3>
-              <p>shavinanjithachandrawansha@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <img src="assets/icons/search.svg" alt="" width="45px" />
-            <div class="line-box">
-              <h3>Phone</h3>
-              <p>+947 785 42602</p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form
-            action="https://send.pageclip.co/lCNZ6N6zuaR1cA2uF4xLPN46teklypFm/portfolio-contact-form"
-            class="pageclip-form"
-            method="post"
-          >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required
-            />
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              required
-            /><br />
-
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
-              required
-            />
-
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Phone"
-              required
-            /><br />
-
-            <textarea
-              id="description"
-              name="description"
-              placeholder="Write Your Message Here"
-            ></textarea
-            ><br />
-
-            <button type="submit" class="pageclip-form__submit">
-              <span>Send</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- end of contact me section -->
 
     <!-- cursor element -->
     <div class="cursor"></div>

@@ -1,293 +1,72 @@
-// cursor animation
-const cursor = document.querySelector(".cursor");
-const cursor2 = document.querySelector(".cursor2");
+// nav bar toggle
+// nav bar animation and logics
+const nav = document.querySelector("nav .nav-container");
+const sections_ = [
+  document.querySelector("#home"),
+  document.querySelector("#aboutme"),
+  document.querySelector("#skills"),
+  document.querySelector("#projects"),
+  document.querySelector("#contact"),
+];
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.cssText = cursor2.style.cssText =
-    "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
-
-document.addEventListener("click", (e) => {
-  cursor.style.cssText =
-    "left: " +
-    e.clientX +
-    "px; top: " +
-    e.clientY +
-    "px;" +
-    "border: none;   animation: clickedColor 0.3s;";
-});
-
-document.querySelectorAll(".cursor-content").forEach((elem) => {
-  elem.addEventListener("mouseover", function () {
-    cursor.classList.add("active");
-  });
-
-  elem.addEventListener("mouseout", function () {
-    cursor.classList.remove("active");
-    console.log("mouse out");
-  });
-});
-
-requestAnimationFrame(raf);
-
-// collapsible element animation
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach((item) =>
-  item.addEventListener("click", function () {
-    this.classList.toggle("collapsible--expanded");
-  })
-);
-
-// nav bar styling change on scroll
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector(".nav");
+// change the nav bar color on scroll
+window.addEventListener("scroll", () => {
   if (window.scrollY > 100) {
-    nav.classList.add("scrolling");
+    nav.classList.add("nav-scroll");
   } else {
-    nav.classList.remove("scrolling");
+    nav.classList.remove("nav-scroll");
   }
-});
 
-// // hero section backgrond gradient animation
-// const hero = document.querySelector(".hero");
-// hero.addEventListener("mousemove", function (e) {
-//   var x = e.clientX;
-//   var y = e.clientY;
-//   document.body.style.background =
-//     "radial-gradient(circle at " +
-//     x +
-//     "px " +
-//     y +
-//     "px, rgba(0, 0, 30, 1) 0%, rgb(0, 0, 0, 1) 50%)";
-// });
+  // change the color of the nav links
+  const links = document.querySelectorAll("nav .nav-container a");
+  sections_.forEach((section, index) => {
+    const sectionTop = section.offsetTop - 100;
 
-gsap.fromTo(
-  ".text-wrapper-2",
-  {
-    opacity: 0,
-    scale: 0,
-    y: -100,
-    rotationX: 180,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-    stagger: 0.01,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    rotationX: 0,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-  }
-);
+    if (window.scrollY >= sectionTop) {
+      links.forEach((link) => {
+        link.classList.remove("active");
+      });
 
-gsap.fromTo(
-  ".text-wrapper-3",
-  {
-    opacity: 0,
-    scale: 0,
-    y: -100,
-    rotationX: 180,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-    stagger: 0.01,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    rotationX: 0,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-  }
-);
-
-gsap.fromTo(
-  ".i-m-shavin-anjitha",
-  {
-    opacity: 0,
-    scale: 0,
-    y: -100,
-    rotationX: 180,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-    stagger: 0.01,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    rotationX: 0,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-  }
-);
-
-gsap.fromTo(
-  ".hero__profile",
-  { x: -500, scale: 0, opacity: 0 },
-  {
-    x: 0,
-    scale: 1,
-    opacity: 1,
-    duration: 1,
-    ease: "power2.out",
-  }
-);
-
-gsap.fromTo(
-  ".about-me__content",
-  { x: -1000 },
-  {
-    scrollTrigger: {
-      trigger: ".about-me__content",
-      start: "top bottom",
-      end: "bottom bottom",
-      markers: false,
-      scrub: 1,
-      pin: false,
-    },
-    x: 0,
-    opacity: 1,
-  }
-);
-
-// horiozontal scroll animation for services section
-const slider = document.querySelector(".slider");
-const sections = gsap.utils.toArray(".slider section");
-
-// create a timeline for all our sections and then add it to the scrollTrigger
-let t1 = gsap.timeline({
-  defaults: {
-    ease: "none",
-  },
-
-  scrollTrigger: {
-    trigger: slider,
-    pin: true,
-    scrub: 2,
-    start: "top top",
-    end: () => "+=" + slider.offsetWidth,
-  },
-});
-
-// animate the container one way...
-t1.to(
-  sections,
-  {
-    xPercent: -300,
-  },
-  "<"
-);
-
-// animate the content in the text section of each service section
-sections.forEach((stop, index) => {
-  t1.from(stop.querySelector(".col .content"), {
-    yPercent: -50,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: stop.querySelector(".col .content"),
-      start: "top center",
-      end: "bottom center",
-      scrub: 2,
-      containerAnimation: t1,
-    },
-  }).from(
-    stop.querySelector("img"),
-    {
-      xPercent: 40,
-      yPercent: -100,
-      opacity: 0,
-      ease: "elastic.out(1, 0.4)",
-      scrollTrigger: {
-        trigger: stop.querySelector("img"),
-        scrub: 2,
-        containerAnimation: t1,
-      },
-    },
-    "<"
-  );
-});
-
-// service section title parallelX animation
-// select the title element
-const heading = document.querySelector(".services__title h1");
-// split the heading into characters
-const headingSplit = new SplitType(heading);
-
-const letters = heading.querySelectorAll(".char");
-
-function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-// animate the letters
-letters.forEach((letter, index) => {
-  const randomYPercent = getRandom(70, 1100);
-  const randomXPercent = getRandom(-1100, 1100);
-
-  gsap.fromTo(
-    letter,
-    {
-      yPercent: -randomYPercent,
-      xPercent: -randomXPercent,
-      opacity: 0,
-    },
-    {
-      yPercent: 0,
-      xPercent: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: heading,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-      },
+      links[index].classList.add("active");
     }
-  );
+  });
 });
 
-// contact me text animation
-const contactMeText = document.querySelector(".contact-me__title");
-const contactMeRows = gsap.utils.toArray("#contact-me .row");
+const navLinks = document.querySelectorAll("nav .nav-container a");
 
-gsap.fromTo(
-  contactMeText,
-  {
-    opacity: 0,
-    yPercent: -100,
-  },
-  {
-    opacity: 1,
-    yPercent: 0,
-    scrollTrigger: {
-      trigger: contactMeText,
-      start: "top center",
-      end: "bottom center",
-      scrub: 1,
-    },
+navLinks.forEach((link) => {
+  // apply smooth scrolling for each link
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = link.getAttribute("link");
+    const offsetTop = document.querySelector(href).offsetTop - 100;
+
+    window.scrollTo({ top: offsetTop, behavior: "smooth" });
+
+    // close the menu
+    navLinksList.classList.remove("nav-links-active");
+  });
+});
+
+const mainLogo = document.querySelector("nav .nav-container .logo");
+mainLogo.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// nav bar toggler logic
+const navToggler = document.querySelector("nav .nav-toggler");
+const navToggleIcon = document.querySelector("nav .nav-toggler svg");
+const navLinksList = document.querySelector("nav .nav-links");
+
+navToggler.addEventListener("click", () => {
+  if (navLinksList.classList.contains("nav-links-active")) {
+    navLinksList.classList.remove("nav-links-active");
+    navToggleIcon.classList.remove("svg-clicked");
+  } else {
+    navLinksList.classList.add("nav-links-active");
+    navToggleIcon.classList.add("svg-clicked");
   }
-);
-
-contactMeRows.forEach((row, index) => {
-  gsap.fromTo(
-    row,
-    {
-      opacity: 0,
-      x: -300,
-    },
-    {
-      opacity: 1,
-      x: 0,
-      scrollTrigger: {
-        trigger: contactMeText,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-      },
-    }
-  );
 });
 
 // for smoother scrolling experience
