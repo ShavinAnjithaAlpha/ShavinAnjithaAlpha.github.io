@@ -40,10 +40,11 @@ html::-webkit-scrollbar {
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 h1 {
@@ -121,7 +122,6 @@ h1 {
   backdrop-filter: blur(20px) brightness(1);
   /* background-color: rgba(0, 0, 0, 0.2); */
   width: 100%;
-  height: 100%;
 }
 
 /* nav bar styling */
@@ -305,10 +305,75 @@ nav .nav-container .contact-btn:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
-  padding: 0 20px;
-  background-attachment: fixed;
+  padding: 6rem 15rem;
+}
+
+#home .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+#home .left h1 {
+  font-size: 8rem;
+  color: #c31432;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+#home .left h1 span {
+  color: white;
+}
+
+#home .left h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #c31432;
+  margin-bottom: 0rem;
+}
+
+#home .left p {
+  font-size: 2.1rem;
+  line-height: 1.4;
+  color: #eeeeeeaa;
+  text-align: left;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+#home .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .right .image-box {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  #home .right {
+    padding-top: 10rem;
+  }
+
+  #home .left {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #home .left p {
+    text-align: center;
+    font-size: 2rem;
+  }
 }
 
 /* skills section styling */
@@ -317,7 +382,7 @@ nav .nav-container .contact-btn:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 3rem;
+  padding: 0 2rem;
   padding-top: 10px;
 }
 
@@ -331,11 +396,38 @@ nav .nav-container .contact-btn:hover {
 #skills .skill-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 40px;
+  gap: 50px;
   margin-top: 5rem;
   padding: 2rem 2rem;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
+}
+
+#skills .skill-grid span svg {
+  transition: all 0.3s ease;
+}
+
+#skills .skill-grid span svg:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+  #skills .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    gap: 40px;
+    width: 100%;
+  }
+
+  #skills {
+    padding: 0;
+  }
+
+  #skills .skill-card span svg {
+    width: 80;
+    height: 80;
+  }
 }
 
 /* project page styling */

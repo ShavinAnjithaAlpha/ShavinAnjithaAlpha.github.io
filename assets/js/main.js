@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 // nav bar toggle
 // nav bar animation and logics
 const nav = document.querySelector("nav .nav-container");
@@ -67,6 +69,31 @@ navToggler.addEventListener("click", () => {
     navLinksList.classList.add("nav-links-active");
     navToggleIcon.classList.add("svg-clicked");
   }
+});
+
+// skills section icons fading animations
+const skillsIcons = document.querySelectorAll("#skills .skill-grid span");
+gsap.from(skillsIcons, {
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 80%",
+  },
+  y: 50,
+  opacity: 0,
+  stagger: 0.1,
+});
+
+// projetc cards animations
+const projectCards = document.querySelectorAll("#projects .project-card");
+projectCards.forEach((card) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 80%",
+    },
+    y: 50,
+    opacity: 0,
+  });
 });
 
 // for smoother scrolling experience
