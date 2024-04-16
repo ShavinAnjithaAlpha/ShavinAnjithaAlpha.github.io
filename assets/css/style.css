@@ -311,6 +311,33 @@ nav .nav-container .contact-btn:hover {
   background-attachment: fixed;
 }
 
+/* skills section styling */
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+  padding-top: 10px;
+}
+
+#skills h1 {
+  font-size: 8rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#skills .skill-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 40px;
+  margin-top: 5rem;
+  padding: 2rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+}
+
 /* project page styling */
 #projects {
   display: flex;
