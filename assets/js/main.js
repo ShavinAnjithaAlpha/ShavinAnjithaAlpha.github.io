@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const nav = document.querySelector("nav .nav-container");
 const sections_ = [
   document.querySelector("#home"),
-  document.querySelector("#aboutme"),
+  document.querySelector("#services"),
   document.querySelector("#skills"),
   document.querySelector("#projects"),
   document.querySelector("#contact"),
@@ -81,6 +81,19 @@ gsap.from(skillsIcons, {
   y: 50,
   opacity: 0,
   stagger: 0.1,
+});
+
+// service card s animations
+const serviceCards = document.querySelectorAll("#services .service-card");
+serviceCards.forEach((card) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 80%",
+    },
+    y: 50,
+    opacity: 0,
+  });
 });
 
 // projetc cards animations

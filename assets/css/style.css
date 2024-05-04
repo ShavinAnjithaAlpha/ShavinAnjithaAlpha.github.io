@@ -41,8 +41,16 @@ html::-webkit-scrollbar {
 
 body {
   width: 100vw;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(48, 11, 121, 1) 0%,
+    rgba(0, 0, 0, 1) 80%
+  );
+
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -127,7 +135,7 @@ h1 {
 /* nav bar styling */
 nav .nav-container {
   position: fixed;
-  top: 5px;
+  top: 20px;
   left: 5%;
   width: 90%;
   display: flex;
@@ -139,6 +147,11 @@ nav .nav-container {
   border-radius: 25px;
   height: 70px;
   transition: all 0.5s ease;
+  /* From https://css.glass */
+  background: rgba(48, 11, 121, 0.5);
+  box-shadow: 0 4px 40px 10px rgb(49, 3, 95, 0.5);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
 }
 
 nav .nav-toggler {
@@ -178,13 +191,14 @@ nav .nav-container .logo h4 {
 
 nav .nav-scroll {
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(20px);
-  backdrop-filter: brightness(0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background: rgba(48, 11, 121, 0.2);
   width: 100%;
   left: 0;
   border-radius: 0;
   transition: all 0.5s ease;
+  backdrop-filter: blur(7.9px) brightness(0.5);
+  -webkit-backdrop-filter: blur(7.9px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -196,6 +210,11 @@ nav .nav-scroll {
     flex-wrap: wrap;
     padding: 0;
     height: auto;
+    background-color: #000000dd;
+  }
+
+  nav .nav-container .logo {
+    margin: 10px;
   }
 
   nav .nav-toggler {
@@ -212,15 +231,16 @@ nav .nav-scroll {
   nav .nav-toggler svg {
     opacity: 0.5;
     transition: all 0.5s ease;
+    width: 50px;
   }
 
   nav .nav-toggler:hover svg {
-    opacity: 1;
+    opacity: 0.9;
     transition: all 0.5s ease;
   }
 
   nav .nav-toggler .svg-clicked {
-    opacity: 1;
+    opacity: 0.8;
     box-shadow: 0 0 10px #666;
   }
 
@@ -231,13 +251,14 @@ nav .nav-scroll {
 
   nav .nav-container .nav-links {
     display: none;
+    transition: all 0.5s ease;
   }
 
   nav .nav-container .nav-links-active {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.8);
     margin: 0;
     height: auto;
     transition: all 0.5s ease;
@@ -246,9 +267,9 @@ nav .nav-scroll {
   nav .nav-container .nav-links li {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     margin: 5px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   nav .nav-scroll {
@@ -282,6 +303,7 @@ nav ul.nav-links li a:hover {
 
 nav ul.nav-links .active {
   color: var(--secondary-color);
+  font-weight: 500;
   transition: all 0.5s ease;
 }
 
@@ -306,15 +328,41 @@ nav .nav-container .contact-btn:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 15rem;
+  padding: 6rem 12rem;
+}
+
+#home .home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #home {
+    padding: 6rem 0rem;
+  }
+
+  #home .home-container {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 #home .left {
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 3rem;
+  padding-top: 7rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #home .left {
+    width: 90%;
+  }
 }
 
 #home .left h1 {
@@ -330,16 +378,16 @@ nav .nav-container .contact-btn:hover {
 }
 
 #home .left h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bold;
   color: #c31432;
   margin-bottom: 0rem;
 }
 
 #home .left p {
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 1.4;
-  color: #eeeeeeaa;
+  color: #ffffffaa;
   text-align: left;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -347,15 +395,16 @@ nav .nav-container .contact-btn:hover {
 }
 
 #home .right {
+  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
 #home .right .image-box {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -368,6 +417,11 @@ nav .nav-container .contact-btn:hover {
   #home .left {
     align-items: center;
     justify-content: center;
+  }
+
+  #home .left h1 {
+    font-size: 6rem;
+    text-align: center;
   }
 
   #home .left p {
@@ -393,6 +447,12 @@ nav .nav-container .contact-btn:hover {
   margin-bottom: 4rem;
 }
 
+@media only screen and (max-width: 600px) {
+  #skills h1 {
+    font-size: 6rem;
+  }
+}
+
 #skills .skill-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -416,8 +476,8 @@ nav .nav-container .contact-btn:hover {
   #skills .skill-grid {
     grid-template-columns: repeat(3, 1fr);
     padding: 2rem;
-    gap: 40px;
-    width: 100%;
+    gap: 20px;
+    width: 90%;
   }
 
   #skills {
@@ -425,9 +485,98 @@ nav .nav-container .contact-btn:hover {
   }
 
   #skills .skill-card span svg {
-    width: 80;
-    height: 80;
+    width: 70;
+    height: 70;
   }
+}
+
+/* services section styling */
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  padding-top: 10px;
+}
+
+#services h1 {
+  font-size: 8rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #services h1 {
+    font-size: 6rem;
+  }
+}
+
+#services .service-grid {
+  gap: 10px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #services .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#services .service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: 0 2rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#services .service-card .logo {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+#services .service-card h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#services .service-card p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #ffffffaa;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+#serivices .service-card .tech-stack-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+#services .service-card .tech-stack-bar span {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
+  margin: 1rem 1rem;
 }
 
 /* project page styling */
@@ -466,7 +615,7 @@ nav .nav-container .contact-btn:hover {
 
 @media only screen and (max-width: 600px) {
   #projects .project-title .left {
-    width: 100%;
+    width: 70%;
   }
 }
 
@@ -668,7 +817,8 @@ nav .nav-container .contact-btn:hover {
 }
 
 #contact p {
-  color: #c31432;
+  /* color: #c31432; */
+  color: var(--secondary-color);
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -717,7 +867,8 @@ nav .nav-container .contact-btn:hover {
 
 #contact .left h3 {
   font-size: 1.8rem;
-  color: #c31432;
+  /* color: #c31432; */
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
@@ -834,7 +985,8 @@ nav .nav-container .contact-btn:hover {
   border: none;
   border-radius: 5px;
   /* background-color: #c31432; */
-  border: 2px solid #c31432;
+  /* border: 2px solid #c31432; */
+  border: 2px solid var(--secondary-color);
   background-color: #00000000;
   color: white;
   cursor: pointer;
@@ -842,7 +994,8 @@ nav .nav-container .contact-btn:hover {
 }
 
 #contact button:hover {
-  background-color: #c31432;
+  /* background-color: #c31432; */
+  background-color: var(--secondary-color);
 }
 #contact button:focus {
   outline: none;
