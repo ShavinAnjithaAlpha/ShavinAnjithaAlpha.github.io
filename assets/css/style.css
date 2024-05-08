@@ -402,6 +402,12 @@ nav .nav-container .contact-btn:hover {
   justify-content: center;
 }
 
+@media only screen and (max-width: 600px) {
+  #home .right {
+    align-items: center;
+  }
+}
+
 #home .right .image-box {
   width: 350px;
   height: 350px;
