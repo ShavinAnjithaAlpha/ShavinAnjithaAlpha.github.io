@@ -229,9 +229,9 @@ nav .nav-scroll {
   }
 
   nav .nav-toggler svg {
-    opacity: 0.5;
+    opacity: 0.3;
     transition: all 0.5s ease;
-    width: 50px;
+    width: 40px;
   }
 
   nav .nav-toggler:hover svg {
@@ -241,7 +241,7 @@ nav .nav-scroll {
 
   nav .nav-toggler .svg-clicked {
     opacity: 0.8;
-    box-shadow: 0 0 10px #666;
+    box-shadow: 0 0 10px #444;
   }
 
   nav .nav-toggler .svg-clicked:hover {
@@ -463,6 +463,59 @@ nav .nav-container .contact-btn:hover {
   margin-bottom: 4rem;
 }
 
+#skills .skills-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 0 8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #skills .skills-title {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+}
+
+#skills .skills-title .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #skills .skills-title .left {
+    width: 70%;
+  }
+}
+
+#skills .skills-title .left h1 {
+  font-size: 7rem;
+  color: white;
+  margin-right: 10px;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#skills .skills-title .left p {
+  font-size: 1.7rem;
+  line-height: 1.4;
+  color: #ffffffaa;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#skills .skill-title .right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   #skills h1 {
     font-size: 6rem;
@@ -534,7 +587,7 @@ nav .nav-container .contact-btn:hover {
 #education .education-title {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 2rem;
   padding: 0 8rem;
@@ -593,6 +646,12 @@ nav .nav-container .contact-btn:hover {
   width: 65%;
 }
 
+@media only screen and (max-width: 600px) {
+  #education .education-container {
+    width: 100%;
+  }
+}
+
 #education .education-card {
   min-width: 100%;
   display: flex;
@@ -605,6 +664,14 @@ nav .nav-container .contact-btn:hover {
   margin: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #education .education-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 #education .education-card:hover {
@@ -625,6 +692,24 @@ nav .nav-container .contact-btn:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  #education .education-card .content {
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #education .education-card .content h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  #education .education-card .content p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 #education .education-card .content h2 {
@@ -663,6 +748,59 @@ nav .nav-container .contact-btn:hover {
   color: white;
   font-weight: 500;
   margin-bottom: 4rem;
+}
+
+#services .services-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #services .services-title {
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+  }
+}
+
+#services .services-title .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #services .services-title .left {
+    width: 70%;
+  }
+}
+
+#services .services-title .left h1 {
+  font-size: 7rem;
+  color: white;
+  margin-right: 10px;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#services .services-title .left p {
+  font-size: 1.7rem;
+  line-height: 1.4;
+  color: #ffffffaa;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#services .services-title .right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -758,7 +896,7 @@ nav .nav-container .contact-btn:hover {
 
 @media only screen and (max-width: 600px) {
   #projects .project-title {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0 2rem;
   }
 }
