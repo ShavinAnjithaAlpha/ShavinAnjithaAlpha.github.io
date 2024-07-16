@@ -470,12 +470,18 @@ nav .nav-container .contact-btn:hover {
 }
 
 #skills .skill-grid {
+  width: 70%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 15px;
+  gap: 30px;
   margin-top: 5rem;
   padding: 2rem 2rem;
   background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 22, 22, 0.7) 0%,
+    rgba(14, 6, 32, 0.7) 100%
+  );
   border-radius: 20px;
 }
 
@@ -505,6 +511,141 @@ nav .nav-container .contact-btn:hover {
     width: 50;
     height: 50;
   }
+}
+
+/* education section styling */
+/* services section styling */
+#education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  padding-top: 10px;
+}
+
+#education h1 {
+  font-size: 8rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#education .education-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #education .education-title {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+}
+
+#education .education-title .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #education .education-title .left {
+    width: 70%;
+  }
+}
+
+#education .education-title .left h1 {
+  font-size: 7rem;
+  color: white;
+  margin-right: 10px;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#education .education-title .left p {
+  font-size: 1.7rem;
+  line-height: 1.4;
+  color: #ffffffaa;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#education .education-title .right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#education .education-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 65%;
+}
+
+#education .education-card {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#education .education-card:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+#education .education-card .logo {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+#education .education-card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#education .education-card .content h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#education .education-card .content p {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #ffffff99;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+#education .education-card .content span {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
 /* services section styling */
