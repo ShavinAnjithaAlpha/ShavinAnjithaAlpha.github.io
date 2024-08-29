@@ -1138,7 +1138,11 @@ nav .nav-container .contact-btn:hover {
 }
 
 #projects .project-title .left button {
-  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
   font-size: 1.5rem;
   border: none;
   border-radius: 25px;
@@ -1146,6 +1150,10 @@ nav .nav-container .contact-btn:hover {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+#projects .project-title .left button svg {
+  margin-left: 10px;
 }
 
 #projects .project-title .left button:hover {
