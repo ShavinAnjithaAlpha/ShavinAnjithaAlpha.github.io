@@ -43,6 +43,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/css/article.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <meta
       name="description"
@@ -79,7 +83,7 @@
             the problem (Consensus cannot be solved deterministically in an
             asynchronous system if even a single process crashes)."
     />
-    <meta name="og:image" content="assets/img/profile-ellipse.png" />
+    <meta name="og:image" content="/assets/img/profile-ellipse.png" />
     <meta name="og:url" content="https://shavinanjitha.me" />
   </head>
   <body>
@@ -108,7 +112,7 @@
     </div>
 
     <div class="cover-image">
-      <img src="../assets/img/pattern.jpg" alt="Cover Image" />
+      <img src="../assets/img/pattern.webp" alt="Cover Image" />
 
       <div class="article-header">
         <span class="block">BLOG</span>
@@ -120,9 +124,17 @@
 
       <div class="article-container">
         <div class="social-icons">
-          <a href="#" class="icon">X</a>
-          <a href="#" class="icon">f</a>
-          <a href="#" class="icon">in</a>
+          <a href="#" class="icon">
+            <!-- <i class="fa-brands fa-linkedin"></i> -->
+            <i class="fa-brands fa-linkedin-in" style="color: skyblue"></i>
+          </a>
+          <a href="#" class="icon">
+            <!-- <i class="fa-brands fa-facebook"></i> -->
+            <i class="fa-brands fa-facebook-f" style="color: skyblue"></i>
+          </a>
+          <a href="#" class="icon">
+            <i class="fa-brands fa-twitter" style="color: skyblue"></i>
+          </a>
         </div>
         <div class="blog-content">
           <p class="date">13 Mar, 2024</p>
@@ -640,42 +652,6 @@
       </div>
     </div>
 
-    <script>
-      const toggle = document.getElementById("dark-mode-toggle");
-      toggle.addEventListener("click", () => {
-        if (document.body.classList.contains("dark-mode")) {
-          document.body.classList.remove("dark-mode");
-          document
-            .getElementsByClassName("article-container")[0]
-            .classList.remove("dark-article-container");
-        } else {
-          document.body.classList.toggle("dark-mode");
-          document
-            .getElementsByClassName("article-container")[0]
-            .classList.add("dark-article-container");
-        }
-      });
-
-      const socialIconsBar = document.querySelector(".social-icons");
-      const socialIconOffSetTop = socialIconsBar.offsetTop;
-
-      const blogHeader = document.querySelector(".blog-header");
-      const sticky = blogHeader.offsetTop;
-
-      // JavaScript for sticky blog-header
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > sticky) {
-          blogHeader.classList.add("sticky");
-        } else {
-          blogHeader.classList.remove("sticky");
-        }
-
-        if (window.pageYOffset > socialIconOffSetTop) {
-          socialIconsBar.classList.add("floating-social-icons");
-        } else {
-          socialIconsBar.classList.remove("floating-social-icons");
-        }
-      });
-    </script>
+    <script src="/assets/js/article.js" />
   </body>
 </html>
