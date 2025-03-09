@@ -6,7 +6,7 @@ const nav = document.querySelector("nav .nav-container");
 const sections_ = [
   document.querySelector("#home"),
   document.querySelector("#education"),
-  document.querySelector("#services"),
+  // document.querySelector("#services"),
   document.querySelector("#skills"),
   document.querySelector("#projects"),
   document.querySelector("#contact"),
