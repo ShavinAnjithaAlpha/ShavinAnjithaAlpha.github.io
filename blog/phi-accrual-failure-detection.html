@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CWBY2MRPEE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CWBY2MRPEE");
+    </script>
+
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "nkymcpvily");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Phi Accrual Failure Detection in Distributed Computing | Shavin Anjitha
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/article.css" />
+
+    <meta
+      name="description"
+      content="Failure detection is one of the most fundamental building blocks of
+            distributed computing for ensuring fault tolerance. It mainly helps
+            to efficiently coordinate tasks/jobs between multiple nodes by
+            identifying malfunctioning or crashed nodes in the system. Failure
+            detection also plays a crucial role in distributed agreement
+            problems such as Consensus to avoid the indeterministic nature of
+            the problem (Consensus cannot be solved deterministically in an
+            asynchronous system if even a single process crashes).
+    "
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="keywords"
+      content="Failure Detection, Fault Tolerance, Distributed Computing, Distributed Systems, Resilience, Shavin Anjitha, Blog, Blog Article, Shavin Anjitha's Blog"
+    />
+    <meta name="author" content="Shavin Anjitha" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta
+      name="og:title"
+      content="Phi Accrual Failure Detection in Distributed Computing"
+    />
+    <meta
+      name="og:description"
+      content="Failure detection is one of the most fundamental building blocks of
+            distributed computing for ensuring fault tolerance. It mainly helps
+            to efficiently coordinate tasks/jobs between multiple nodes by
+            identifying malfunctioning or crashed nodes in the system. Failure
+            detection also plays a crucial role in distributed agreement
+            problems such as Consensus to avoid the indeterministic nature of
+            the problem (Consensus cannot be solved deterministically in an
+            asynchronous system if even a single process crashes)."
+    />
+    <meta name="og:image" content="assets/img/profile-ellipse.png" />
+    <meta name="og:url" content="https://shavinanjitha.me" />
+  </head>
+  <body>
+    <header>
+      <div class="logo cursor-scale small">
+        <img
+          src="/assets/img/profile-ellipse.png"
+          alt="Profile Picture"
+          width="40"
+        />
+      </div>
+      <nav>
+        <a href="/index.html" class="active">HOME</a>
+        <a href="#">LIBRARY</a>
+        <a href="/index.html#blogs">BLOGS</a>
+      </nav>
+      <button id="dark-mode-toggle">&#9728;</button>
+    </header>
+
+    <div class="blog-header">
+      <h1>Blog</h1>
+
+      <h2 class="title">
+        Phi Accrual Failure Detection in Distributed Computing
+      </h2>
+    </div>
+
+    <div class="cover-image">
+      <img src="../assets/img/pattern.jpg" alt="Cover Image" />
+
+      <div class="article-header">
+        <span class="block">BLOG</span>
+        <span class="slash">/</span>
+        <span class="article-title">
+          Phi Accrual Failure Detection in Distributed Computing
+        </span>
+      </div>
+
+      <div class="article-container">
+        <div class="social-icons">
+          <a href="#" class="icon">X</a>
+          <a href="#" class="icon">f</a>
+          <a href="#" class="icon">in</a>
+        </div>
+        <div class="blog-content">
+          <p class="date">13 Mar, 2024</p>
+          <h1 class="title">
+            Phi Accrual Failure Detection in Distributed Computing
+          </h1>
+
+          <div class="article-author">
+            <img
+              class="author-image"
+              src="/assets/img/avatar.webp"
+              alt="Author Image"
+              width="70px"
+              height="70px"
+            />
+            <div class="author-details">
+              <p class="author-name">Shavin Anjitha</p>
+              <p class="author-description">Software Engineer</p>
+            </div>
+          </div>
+
+          <img
+            class="featured-image"
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*0888d-1WW_oDhNyGAI3bYw.png"
+            alt="Featured Image"
+          />
+
+          <p>
+            Failure detection is one of the most fundamental building blocks of
+            distributed computing for ensuring fault tolerance. It mainly helps
+            to efficiently coordinate tasks/jobs between multiple nodes by
+            identifying malfunctioning or crashed nodes in the system. Failure
+            detection also plays a crucial role in distributed agreement
+            problems such as Consensus to avoid the indeterministic nature of
+            the problem (Consensus cannot be solved deterministically in an
+            asynchronous system if even a single process crashes).
+          </p>
+
+          <p>
+            There have been many failure detection algorithms and mechanisms
+            since the beginning of distributed computing. Still, many failed to
+            provide failure detection to meet their specific application
+            requirements reliably. The main reason why those conventional
+            failure detectors make it difficult to meet the requirements of
+            several distributed applications running simultaneously is their
+            Boolean-natured answers of node failures. Many simultaneously
+            running distributed applications with different quality of service
+            requirements need failure detection algorithms that can be tuned to
+            meet their own needs without interfering with each other.
+          </p>
+
+          <p>
+            Therefore, the failure detector we are going to talk about today
+            helps us to completely decouple the application requirements from
+            issues related to the underlying system.
+          </p>
+
+          <p>
+            So, before we go to explain phi accrual failure detectors, let’s
+            talk about what accrual failure detectors are and how they differ
+            from conventional failure detectors.
+          </p>
+
+          <h2>Accrual Failure Detectors</h2>
+
+          <p>
+            Failure detectors are traditionally based on a Boolean interaction
+            model wherein processes can only either trust or suspect the process
+            they are monitoring. In contrast, accrual failure detectors output a
+            value on a continuous scale rather than information in a Boolean
+            perspective.
+          </p>
+
+          <p>
+            This outputted value primarily indicates the level of confidence
+            that a monitored process has crashed. If the process has indeed
+            crashed, this value will increase over time and ultimately approach
+            infinity. It is up to the application processes to establish an
+            appropriate suspicion threshold based on their specific quality of
+            service requirements. A lower threshold is more susceptible to false
+            conclusions but allows for quicker detection of crashed processes.
+            Conversely, a higher threshold reduces the likelihood of mistakes
+            but takes longer to identify actual process crashes.
+          </p>
+
+          <p>
+            Let’s understand the advantages of having an accrual failure
+            detector rather than conventional failure detectors using an
+            example.
+          </p>
+
+          <p>
+            Consider a distributed application with a master-slave architecture,
+            where a master process coordinates several slave processes that
+            serve as workers. The master maintains a list of jobs that need to
+            be completed by these worker processes. As long as there are jobs on
+            the list, the master assigns tasks to idle worker processes and
+            collects their results once the tasks are finished.
+          </p>
+
+          <p>
+            Now, assume that one of the workers' processes crashes during the
+            execution of an assigned job. For simplicity, we will consider that
+            the master process never crashes. If the master cannot identify the
+            crashed process, the system may block indefinitely, mistakenly
+            assuming that the crashed process is still working on the assigned
+            task. However, if the master can detect the crashed process, it can
+            take appropriate actions to resolve the issue.
+          </p>
+
+          <p>
+            Next, let’s explore the steps a master can take using an accrual
+            failure detector instead of a conventional failure detector.
+          </p>
+
+          <p>
+            When a suspicious level reaches some low threshold, the master
+            simply flags the worker process and temporarily stops sending new
+            jobs to that process. Then reaching some moderate suspicious level,
+            the master cancels all unfinished computations that were running on
+            that process and resubmits them to some other worker processes.
+            Finally, when reaching a high threshold level, the confidence that
+            the worker process crashed is very high, so the master removes that
+            worker process from the list of available workers and releases all
+            corresponding resources. Achieving this kind of behavior is quite
+            challenging with conventional failure detectors.
+          </p>
+
+          <p>
+            Before we explore accrual failure detectors, let’s first understand
+            how conventional failure detector's function and why they often fail
+            to provide reliable failure detection mechanisms in distributed
+            applications.
+          </p>
+
+          <h2>How Conventional Failure Detectors Work</h2>
+
+          <p>
+            Many conventional failure detectors rely on a heartbeat mechanism.
+            We must assume that processes have access to a local physical clock,
+            which enables them to measure time (clocks may or may not be
+            synchronized).
+          </p>
+
+          <p>
+            The detector operates by periodically sending a heartbeat message
+            from the monitored process to indicate its liveness. This message
+            can be in the form of any kind of UDP datagram, although TCP-based
+            messages may also be used; UDP is preferred due to its lower
+            overhead.
+          </p>
+
+          <p>
+            To illustrate how these heartbeat detector's function, let’s
+            consider two example processes: p and q. Process p is the monitored
+            process that sends heartbeat messages, while process q is the
+            monitoring process. Within this setup, there is a heartbeat interval
+            denoted as delta_i, which is the period at which process p sends its
+            heartbeat messages.
+          </p>
+
+          <p>
+            Process q will suspect that process p is unresponsive if it fails to
+            receive a heartbeat message within a timeframe defined by a timeout
+            period, delta_timeout, where delta_timeout is greater than or equal
+            to delta_i. Additionally, it is crucial to consider the average
+            network transmission delay, delta_delay, in this context.
+          </p>
+
+          <p>
+            In a typical implementation of heartbeat-based failure detection
+            protocols, the timeout value is constant. When process q receives a
+            heartbeat from process p, it will wait for the next heartbeat for a
+            maximum of delta_timeout units of time. If it does not receive a new
+            heartbeat within this timeframe, process q starts to suspect that
+            process p has failed.
+          </p>
+
+          <p>
+            When selecting a value for delta_timeout, there are important
+            trade-offs to consider. A shorter timeout value allows for quicker
+            detection of crashes, but it raises the likelihood of mistakenly
+            identifying benign events as suspicious. On the other hand, a longer
+            timeout reduces the chances of false suspicions, yet it delays the
+            detection of actual crashes.
+          </p>
+
+          <p>
+            A significant drawback of using a constant timeout to identify
+            faulty processes is that it fails to account for unreliable network
+            conditions. If the network experiences issues, the interval between
+            heartbeat messages may increase due to packet loss. This can lead to
+            the receiving side exceeding the timeout and mistakenly suspecting
+            that the process is faulty, even though the underlying problem lies
+            with the network. As a result, conventional heartbeat-based failure
+            detectors do not effectively adapt to changing network conditions
+            and instead rely on a static model to determine whether processes
+            are faulty or functioning correctly.
+          </p>
+
+          <p>
+            To effectively identify faulty and correct processes, we need
+            failure detectors that can adapt to their network environment. These
+            detectors should dynamically adjust their parameters based on the
+            changing conditions of the network. Such failure detectors are known
+            as adaptive failure detectors, as the name implies.
+          </p>
+
+          <h2>Adaptive Failure Detectors</h2>
+
+          <p>
+            The goal of adaptive failure detectors is to adapt to dynamic
+            network conditions. Most adaptive failure detectors use the
+            heartbeat strategy as their basic mechanism but with dynamically
+            modifying timeout according to network conditions.
+          </p>
+
+          <p>
+            There are several adaptive failure detectors proposed by several
+            people including <b>Chen-FD</b> and <b>Bertier-FD</b>.
+          </p>
+
+          <ol>
+            <li>
+              <b>Chen-FD</b>: based on probabilistic analysis of network
+              traffic. The protocol uses arrival times samples in the recent
+              past to compute an estimation of the arrival of the next
+              heartbeat. The timeout is set according to the estimation and a
+              constant safety margin added. The estimation of the next heartbeat
+              arrival time is recomputed after each new heartbeat arrival.
+            </li>
+
+            <li>
+              <b>Bertier-FD</b>: based on same approach mentioned above, but
+              using a different estimation function. The estimation combines
+              Chen’s estimation with a dynamic estimation based on Jacobson’s
+              estimation of the round-trip time. The resulting failure detector
+              resulted in more wrong suspicions than Chen’s estimation according
+              to experiments.
+            </li>
+          </ol>
+
+          <p>
+            The accrual failure detector is a type of adaptive failure detector
+            that provides stronger adaptiveness than described above.
+          </p>
+
+          <h2>Architecture of Accrual Failure Detectors</h2>
+
+          <p>
+            The concept behind accrual failure detection is simple. Rather than
+            outputting Boolean information, accrual failure detectors output
+            suspicion levels on a continuous scale. The higher the value, the
+            higher the chance of the monitored process crashing.
+          </p>
+
+          <p>
+            Conceptually, the design of accrual failure detectors on the
+            receiving side can be decomposed into three main parts as follows:
+          </p>
+
+          <ol>
+            <li>
+              <b>Monitoring</b>: the failure detector gathers information from
+              the other processes, usually through the network. Information can
+              be heartbeat arrivals or query response delays.
+            </li>
+            <li>
+              <b>Interpretation</b>: Monitoring information is used and
+              interpreted.
+            </li>
+            <li>
+              <b>Action</b>: actions are executed as a response to triggered
+              suspicions. This is normally done within the applications.
+            </li>
+          </ol>
+
+          <p>
+            The main difference between conventional failure detectors and
+            accrual failure detectors is which component of the system does what
+            part of failure detection.
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*yPnqhzLmqi6Yjtg3FeUwDg.png"
+            alt="Conventional Failure Detector Architecture"
+          />
+
+          <p>
+            In traditional timeout-based implementations of failure detectors,
+            the monitoring and interpretation functions are combined within the
+            failure detector itself, which outputs a simple Boolean value (True
+            or False). The failure of a process is interpreted directly based on
+            the elapsed timeout value. As a result, there is a high degree of
+            coupling between the monitoring information and the failure
+            detector’s interpretation. This design limits the application’s
+            ability to interpret the results, as it can only act on the output
+            provided by the failure detector. Consequently, achieving varying
+            quality of service requirements across different applications
+            becomes challenging, as the application can only respond based on
+            the failure detector’s response.
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*b_w1kCtDNPZD9jsjb_xv-A.png"
+            alt="Adaptive Failure Detector Architecture"
+          />
+
+          <p>
+            Accrual failure detectors, in contrast, separate the monitoring
+            process from the interpretation of the data. In this approach, the
+            responsibility for interpreting the information lies with the
+            application, while the failure detector focuses solely on monitoring
+            the processes and gathering relevant data. The failure detector
+            produces an output based on the collected monitoring information,
+            which the application then uses for interpretation.
+          </p>
+
+          <p>
+            By establishing suitable threshold levels for the output value, the
+            application can take necessary actions to meet its quality
+            requirements. For instance, the master process can utilize this
+            output value to allocate the most urgent tasks exclusively to worker
+            processes with lower suspicious values.
+          </p>
+
+          <p>
+            The value output by the failure detector has certain properties to
+            be followed to be mathematically accurate. The first two properties
+            specify what the output should be if monitored process p crashes,
+            whereas the remaining two properties specify what the output should
+            be if p is correct.
+          </p>
+
+          <ol>
+            <li>
+              <b>Asymptotic property</b>: If process p is faulty, the suspicious
+              level tends to infinity as time goes to infinity.
+            </li>
+            <li>
+              <b>Eventual monotony</b>: The process p is faulty, there is a time
+              after the suspicious level is monotonic increasing.
+            </li>
+            <li>
+              <b>Upper bound</b>: The process p is correct if and only if the
+              suspicious level has an upper bound over an infinite execution.
+            </li>
+            <li>
+              <b>Reset</b>: If process p is correct, then for anytime t0,
+              suspicious level is equal to zero for some time t ≥ t0.
+            </li>
+          </ol>
+
+          <p>
+            Accrual failure detectors merely define an abstraction, and
+            therefore there can be many implementations of the accrual failure
+            detector. The Phi Accrual Failure Detector is one of the practical
+            implementations proposed by Naohiro Hayashibara in 2004 in this
+            <a
+              href="https://www.researchgate.net/publication/29682135_The_ph_accrual_failure_detector"
+              >paper</a
+            >.
+          </p>
+
+          <h2>Implementation of the Phi Accrual Failure Detector</h2>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*hZDR92EzPhkpgQZyZzRmMQ.png"
+            alt="Architecture of the Phi Accrual Failure Detector"
+          />
+
+          <p>
+            In this implementation, suspicious value is given by a value called
+            Phi. The basic idea of the phi failure detector is to express the
+            value of phi on a scale that is dynamically adjusted to reflect
+            current network conditions.
+          </p>
+
+          <p>There are three terms to be identified first:</p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*2xgYDUmTycR90nVcnRsAWQ.png"
+            alt="equation"
+          />
+
+          <p>Then the value of Phi is calculated as follows:</p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ZRAQ0R6VMtIAuCP5a-vkXw.png"
+            alt="Phi Accrual Failure Detector Formula"
+          />
+
+          <p>
+            There are three phases in the method to calculate the Phi value.
+          </p>
+
+          <ol>
+            <li>
+              This implementation utilizes a heartbeat mechanism to monitor
+              other processes. Arrival times of the heartbeats are stored within
+              a sampling window. This means that the detector maintains a
+              fixed-sized internal buffer that holds the arrival times of
+              heartbeats between the current time and a specified duration in
+              the past. Whenever a heartbeat arrives, its arrival time is
+              recorded in the window, and the data related to the oldest
+              heartbeat is removed from the window.
+            </li>
+            <li>
+              These past samples are used to determine the distribution of
+              inter-arrival times. That is time between two nearby heartbeats.
+            </li>
+            <li>
+              The distribution is in turn used to compute the current value of
+              Phi.
+            </li>
+          </ol>
+
+          <p>
+            Internally, the detector continuously maintains the sum and sum of
+            squares of inter-arrival times in the sampling window to constantly
+            determine the mean and variance. The estimation of the distribution
+            of inter-arrival times assumes that inter-arrivals follow a normal
+            distribution. The parameters of the distribution are estimated from
+            the sampling window, by determining the mean and variance of the
+            samples. Then the probability P_later(t) is given by following
+            formula:
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*YNLLjt9VO2xVwHyaEqQDNg.png"
+            alt="Formula for calculating cumulative probability distribution under normal distribution"
+          />
+
+          <p>
+            F(t) is the cumulative distribution function of a normal
+            distribution above mentioned mean and variance. Then the value is
+            Phi is calculated by applying equation described above.
+          </p>
+
+          <p>
+            The value of Phi increases when the period since the last heartbeat
+            gets lost. If the monitored process is faulty, then the interval
+            between heartbeats will increase, resulting in an increasing value
+            of Phi following the properties one and two of the accrual failure
+            detector.
+          </p>
+
+          <p>
+            Also, if the network becomes low and unreliable, the resulting mean
+            and variance increase, thus needing longer period for which no
+            heartbeat is received before the process is suspected by dynamically
+            adapting to the network conditions.
+          </p>
+
+          <p>
+            The following chart illustrates how phi increases with increasing
+            time since the previous heartbeat.
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*1POGCfa6_fKnARds8GqOqA.png"
+            alt="how phi increases with increasing time since the previous heartbeat"
+          />
+
+          <p>
+            If the monitored process is correct, then inter-heartbeat arrival
+            times will be constant resulting in a zero or very low variance.
+            Hence, according to the distribution and formula, the computed Phi
+            value will be low according to the last two properties of the
+            accrual failure detectors.
+          </p>
+
+          <h2>Summary</h2>
+
+          <p>
+            The Phi Accrual Failure Detector, introduced by Naohiro Hayashibara
+            in 2004, is a highly adaptive mechanism for failure detection in
+            distributed systems. Unlike conventional failure detectors, it
+            calculates a dynamic suspicion value, Phi, that reflects the
+            probability of a process failure based on heartbeat arrival times
+            and network conditions. Phi is computed using a statistical model
+            derived from recent heartbeat inter-arrival times, assuming a normal
+            distribution to estimate mean and variance.
+          </p>
+
+          <p>
+            By dynamically adjusting to network delays and failures, the Phi
+            value increases as the time since the last heartbeat grows,
+            indicating a higher likelihood of process failure. This adaptiveness
+            ensures reliability even in unpredictable network conditions,
+            allowing distributed applications to tune their failure thresholds
+            based on specific requirements, thereby improving fault tolerance
+            and responsiveness.
+          </p>
+
+          <h2>Reference</h2>
+
+          <ol>
+            <li>
+              Hayashibara, Naohiro & Défago, Xavier & Yared, Rami & Katayama,
+              Takuya. (2004).
+              <a
+                href="https://www.researchgate.net/publication/29682135_The_ph_accrual_failure_detector"
+                >The φ accrual failure detector</a
+              >. 10.1109/RELDIS.2004.1353004.
+            </li>
+            <li>
+              <a
+                href="https://doc.akka.io/libraries/akka-core/current/typed/failure-detector.html"
+                >https://doc.akka.io/libraries/akka-core/current/typed/failure-detector.html</a
+              >
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("dark-mode-toggle");
+      toggle.addEventListener("click", () => {
+        if (document.body.classList.contains("dark-mode")) {
+          document.body.classList.remove("dark-mode");
+          document
+            .getElementsByClassName("article-container")[0]
+            .classList.remove("dark-article-container");
+        } else {
+          document.body.classList.toggle("dark-mode");
+          document
+            .getElementsByClassName("article-container")[0]
+            .classList.add("dark-article-container");
+        }
+      });
+
+      const socialIconsBar = document.querySelector(".social-icons");
+      const socialIconOffSetTop = socialIconsBar.offsetTop;
+
+      const blogHeader = document.querySelector(".blog-header");
+      const sticky = blogHeader.offsetTop;
+
+      // JavaScript for sticky blog-header
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > sticky) {
+          blogHeader.classList.add("sticky");
+        } else {
+          blogHeader.classList.remove("sticky");
+        }
+
+        if (window.pageYOffset > socialIconOffSetTop) {
+          socialIconsBar.classList.add("floating-social-icons");
+        } else {
+          socialIconsBar.classList.remove("floating-social-icons");
+        }
+      });
+    </script>
+  </body>
+</html>
