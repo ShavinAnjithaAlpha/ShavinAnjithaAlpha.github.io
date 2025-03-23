@@ -42,6 +42,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../assets/css/article.css" />
     <link
       rel="stylesheet"
@@ -87,7 +91,7 @@
     <meta name="og:url" content="https://shavinanjitha.me" />
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="logo cursor-scale small">
         <img
           src="/assets/img/profile-ellipse.png"
@@ -101,18 +105,31 @@
         <a href="/index.html#blogs">BLOGS</a>
       </nav>
       <button id="dark-mode-toggle">&#9728;</button>
-    </header>
+    </header> -->
 
     <div class="blog-header">
-      <h1>Blog</h1>
+      <div class="blog-header-left">
+        <div class="logo">
+          <a href="/index.html">
+            <img
+              src="../assets/img/avatar.webp"
+              alt="Profile Picture"
+              width="40"
+            />
+          </a>
+        </div>
+        <h1 id="blog-link">Blog</h1>
 
-      <h2 class="title">
-        Phi Accrual Failure Detection in Distributed Computing
-      </h2>
+        <h2 class="title">
+          Phi Accrual Failure Detection in Distributed Computing
+        </h2>
+      </div>
+
+      <button id="dark-mode-toggle">&#9728;</button>
     </div>
 
     <div class="cover-image">
-      <img src="../assets/img/pattern.webp" alt="Cover Image" />
+      <!-- <img src="../assets/img/pattern.webp" alt="Cover Image" /> -->
 
       <div class="article-header">
         <span class="block">BLOG</span>
@@ -124,16 +141,14 @@
 
       <div class="article-container">
         <div class="social-icons">
-          <a href="#" class="icon">
-            <!-- <i class="fa-brands fa-linkedin"></i> -->
-            <i class="fa-brands fa-linkedin-in" style="color: skyblue"></i>
+          <a href="#" class="icon" id="share-linkedin">
+            <i class="fa-brands fa-linkedin-in" style="color: orangered"></i>
           </a>
-          <a href="#" class="icon">
-            <!-- <i class="fa-brands fa-facebook"></i> -->
-            <i class="fa-brands fa-facebook-f" style="color: skyblue"></i>
+          <a href="#" class="icon" id="share-facebook">
+            <i class="fa-brands fa-facebook-f" style="color: orangered"></i>
           </a>
-          <a href="#" class="icon">
-            <i class="fa-brands fa-twitter" style="color: skyblue"></i>
+          <a href="#" class="icon" id="share-x">
+            <i class="fa-brands fa-twitter" style="color: orangered"></i>
           </a>
         </div>
         <div class="blog-content">

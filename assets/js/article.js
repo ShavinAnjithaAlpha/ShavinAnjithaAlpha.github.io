@@ -33,3 +33,35 @@ window.addEventListener("scroll", () => {
     socialIconsBar.classList.remove("floating-social-icons");
   }
 });
+
+// article share buttons on social platforms
+document.getElementById("share-x").addEventListener("click", function () {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(document.title);
+  window.open(`https://x.com/intent/tweet?url=${url}&text=${text}`, "_blank");
+});
+
+document
+  .getElementById("share-linkedin")
+  .addEventListener("click", function () {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    const summary = encodeURIComponent(
+      document.querySelector('meta[name="description"]').content
+    );
+
+    window.open(
+      `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}`,
+      "_blank"
+    );
+  });
+
+document
+  .getElementById("share-facebook")
+  .addEventListener("click", function () {
+    const url = encodeURIComponent(window.location.href);
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      "_blank"
+    );
+  });

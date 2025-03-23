@@ -5,6 +5,9 @@ body {
   background-color: #dedcdc;
   transition: background 0.3s, color 0.3s;
   box-sizing: border-box;
+  /* background: url("../img/pattern.webp"); */
+  background-size: cover;
+  background-attachment: fixed;
 }
 header {
   top: 0;
@@ -20,7 +23,7 @@ header h1 {
   margin: 0;
 }
 
-header .logo {
+.logo {
   width: 40px;
   height: 40px;
   overflow: hidden;
@@ -34,18 +37,18 @@ header .logo {
   transition: all 0.5s ease;
 }
 
-header .logo:hover {
+.logo:hover {
   border-color: white;
   transition: all 0.5s ease;
 }
 
-header .logo img {
+.logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-header.logo h4 {
+.logo h4 {
   font-size: 1.5rem;
   color: white;
   margin-left: 10px;
@@ -66,10 +69,18 @@ nav a.active {
   background-color: #19191e;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  transition: all 0.3s;
+}
+
+.blog-header-left {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 300px;
-  transition: all 0.3s;
+  gap: 20px;
 }
 
 .blog-header.sticky {
@@ -96,6 +107,15 @@ nav a.active {
   display: none;
 }
 
+#blog-link {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#blog-link:hover {
+  color: orange;
+}
+
 .blog-header h1 {
   color: white;
   font-weight: 700;
@@ -114,7 +134,7 @@ nav a.active {
 .cover-image {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -167,7 +187,7 @@ nav a.active {
 
 .article-container {
   position: relative;
-  bottom: 380px;
+  /* bottom: 380px; */
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
@@ -310,13 +330,23 @@ nav a.active {
   font-weight: 300;
 }
 
+.article-container blockquote {
+  font-size: 20px;
+  margin: 10px 0;
+  line-height: 36px;
+  word-spacing: 3px;
+  font-weight: 300;
+}
+
 .dark-mode {
-  background: #1e1e2d;
+  /* background: #1e1e2d; */
+  background-color: rgb(28, 27, 27);
   color: white;
 }
 
 .dark-article-container {
-  background-color: #19191e;
+  /* background-color: #19191e; */
+  background-color: #151515;
   color: white;
 }
 
@@ -332,5 +362,9 @@ nav a.active {
 
 .dark-article-container p,
 .dark-article-container li {
+  color: #bdc1c6;
+}
+
+.dark-article-container blockquote {
   color: #bdc1c6;
 }

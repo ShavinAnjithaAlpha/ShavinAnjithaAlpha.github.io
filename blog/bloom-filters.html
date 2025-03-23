@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CWBY2MRPEE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CWBY2MRPEE");
+    </script>
+
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "nkymcpvily");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Scaling with Probabilistic Techniques in System Design: Bloom Filters |
+      Shavin Anjitha
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/article.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <meta
+      name="description"
+      content=" Have you ever wondered how large-scale systems like Twitter,
+            Facebook, or Instagram instantly check whether a username or email
+            ID is already taken or not with thousands of requests per second to
+            these systems?
+    "
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="keywords"
+      content="Bloom Filters, Scaling, System Design, Probability, Probability Techniques, Algorithms, Database, Shavin Anjitha, Blog, Blog Article, Shavin Anjitha's Blog"
+    />
+    <meta name="author" content="Shavin Anjitha" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta
+      name="og:title"
+      content="Scaling with Probabilistic Techniques in System Design: Bloom Filters
+"
+    />
+    <meta
+      name="og:description"
+      content=" Have you ever wondered how large-scale systems like Twitter,
+            Facebook, or Instagram instantly check whether a username or email
+            ID is already taken or not with thousands of requests per second to
+            these systems?"
+    />
+    <meta name="og:image" content="../assets/img/profile-ellipse.png" />
+    <meta name="og:url" content="https://shavinanjitha.me" />
+  </head>
+  <body>
+    <!-- <header>
+      <div class="logo cursor-scale small">
+        <img
+          src="/assets/img/profile-ellipse.png"
+          alt="Profile Picture"
+          width="40"
+        />
+      </div>
+      <nav>
+        <a href="/index.html" class="active">HOME</a>
+        <a href="#">LIBRARY</a>
+        <a href="/index.html#blogs">BLOGS</a>
+      </nav>
+      <button id="dark-mode-toggle">&#9728;</button>
+    </header> -->
+
+    <div class="blog-header">
+      <div class="blog-header-left">
+        <div class="logo">
+          <a href="/index.html">
+            <img
+              src="../assets/img/avatar.webp"
+              alt="Profile Picture"
+              width="40"
+            />
+          </a>
+        </div>
+        <h1 id="blog-link">Blog</h1>
+
+        <h2 class="title">
+          Scaling with Probabilistic Techniques in System Design: Bloom Filters
+        </h2>
+      </div>
+
+      <button id="dark-mode-toggle">&#9728;</button>
+    </div>
+
+    <div class="cover-image">
+      <!-- <img src="../assets/img/pattern.webp" alt="Cover Image" /> -->
+
+      <div class="article-header">
+        <span class="block">BLOG</span>
+        <span class="slash">/</span>
+        <span class="article-title">
+          Scaling with Probabilistic Techniques in System Design: Bloom Filters
+        </span>
+      </div>
+
+      <div class="article-container">
+        <div class="social-icons">
+          <a href="#" class="icon" id="share-linkedin">
+            <i class="fa-brands fa-linkedin-in" style="color: orangered"></i>
+          </a>
+          <a href="#" class="icon" id="share-facebook">
+            <i class="fa-brands fa-facebook-f" style="color: orangered"></i>
+          </a>
+          <a href="#" class="icon" id="share-x">
+            <i class="fa-brands fa-twitter" style="color: orangered"></i>
+          </a>
+        </div>
+        <div class="blog-content">
+          <p class="date">13 Mar, 2024</p>
+          <h1 class="title">
+            Scaling with Probabilistic Techniques in System Design: Bloom
+            Filters
+          </h1>
+
+          <div class="article-author">
+            <img
+              class="author-image"
+              src="/assets/img/avatar.webp"
+              alt="Author Image"
+              width="70px"
+              height="70px"
+            />
+            <div class="author-details">
+              <p class="author-name">Shavin Anjitha</p>
+              <p class="author-description">Software Engineer</p>
+            </div>
+          </div>
+
+          <img
+            class="featured-image"
+            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Uxg7tPepGHHMavC0cT3VsA.png"
+            alt="Featured Image"
+          />
+
+          <p>
+            Have you ever wondered how large-scale systems like Twitter,
+            Facebook, or Instagram instantly check whether a username or email
+            ID is already taken or not with thousands of requests per second to
+            these systems?
+          </p>
+
+          <p>
+            We could check the database that stores user records to see if a
+            username or email ID is available, but this method is not very
+            scalable as the number of records grows. With billions of records in
+            the table, querying the database’s tables can become a bottleneck
+            for platforms like Twitter and Facebook, leading to performance
+            issues when handling thousands of requests per second.
+          </p>
+
+          <p>
+            Additionally, it can lead to poor user experience and is a very
+            time-consuming task.
+          </p>
+
+          <p>
+            One simple solution to this problem is to introduce a caching
+            system. The caching system can reduce the number of times it hits
+            the database each time a user requests availability. Caching can
+            decrease the load on the database and significantly improve response
+            time. It can help the system to scale efficiently by caching the
+            data of repeating requests.
+          </p>
+
+          <p>
+            But also, a cache system alone is not sufficient. If the cache is
+            missing, the system has to hit the database. Also, what if a cache
+            issue steals data? And also, caches consume memory, and if not
+            properly managed, it can lead to excessive memory usage.
+          </p>
+
+          <p>
+            So, what is the solution? The very efficient and scalable solution
+            to this problem is Bloom Filters. Memory-efficient probabilistic
+            data structure was introduced by computer scientist Howard Bloom in
+            1970.
+          </p>
+
+          <p>
+            <strong>Bloom filters</strong> were introduced as a technique for a
+            system to check the availability of an element in a set when the
+            number of elements in the set requires an impractically large amount
+            of memory. As you know, achieving something great comes with a cost.
+            In this case, the price for efficiency is that this solution is
+            probabilistic in nature. This means there might be some false
+            positive results, where it might indicate that an element is in the
+            set when it is not. However, it can never give false negative
+            results, meaning it will never tell you that an element is not in
+            the set when it actually is.
+          </p>
+
+          <p>
+            One interesting aspect of bloom filters is that elements can be
+            added to the set but not removed. As a result, the number of
+            elements in the set continues to grow indefinitely, leading to a
+            steadily increasing false positive rate.
+          </p>
+
+          <p>
+            Bloom filters provide constant time performance for insertion and
+            querying, making them an efficient solution for testing membership
+            problems. Additionally, they can be easily distributed across
+            multiple servers, making them well-suited for cloud-native
+            distributed systems.
+          </p>
+
+          <h2>How Bloom Filter Works</h2>
+
+          <p>
+            Bloom filters use fixed-size m-bit arrays all set to 0 initially.
+            Filter equipped with k-number of hash functions, which maps elements
+            to one of possible m position in the bit array. These hash functions
+            should be independent and uniformly distributed for optimal
+            functioning of the bloom filter.
+          </p>
+
+          <p>
+            Assume we want to insert an element into the set. First, we need to
+            feed it to the k-hash functions, take the k-bit array positions, and
+            turn those bits array positions to 1.
+          </p>
+
+          <p>
+            To test whether an element is in the set, feed it to the k-hash
+            functions to get the k-bit array positions. If any of the bits at
+            these positions in the m-bit array is 0, then the element is
+            definitely not in the set. But if all the k-bit array positions are
+            1, then either the element is in the set or another element mapped
+            to the same k-bit array positions, providing false positive results.
+          </p>
+
+          <img
+            src="To test whether an element is in the set, feed it to the k-hash functions to get the k-bit array positions. If any of the bits at these positions in the m-bit array is 0, then the element is definitely not in the set. But if all the k-bit array positions are 1, then either the element is in the set or another element mapped to the same k-bit array positions, providing false positive results."
+            alt="Bloom Filter"
+          />
+
+          <img
+            src="To test whether an element is in the set, feed it to the k-hash functions to get the k-bit array positions. If any of the bits at these positions in the m-bit array is 0, then the element is definitely not in the set. But if all the k-bit array positions are 1, then either the element is in the set or another element mapped to the same k-bit array positions, providing false positive results."
+            alt="Bloom Filter"
+          />
+
+          <p>
+            Removing an element from this simple bloom filter is impossible
+            because if we remove those k-bit array positions from the list,
+            there is a chance that we also removed the elements that mapped to
+            the same k-bit array positions. Although setting those k-bit array
+            positions seems simple, it can introduce the possibility of false
+            negatives, which is something we should avoid.
+          </p>
+
+          <p>Example of how bloom filter works</p>
+
+          <p>
+            Suppose we want to check if a book is available in a large online
+            bookstore. Each book has a unique ISBN for identification. One way
+            to do this is by searching the book data table. However, as the
+            number of records increases, this method can become very
+            time-consuming.
+          </p>
+
+          <p>
+            We can introduce a bloom filter to tackle this problem. Let’s assume
+            we create a 10-bit array with 3 independent, uniformly distributed
+            hash functions.
+          </p>
+
+          <p>arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</p>
+
+          <p>H(e) = {h1(e), h2(e), h3(e)}</p>
+
+          <p>Let's assume we have added the two books with hashes below:</p>
+
+          <p>H (Book A) = {1, 5, 8}</p>
+
+          <p>H (Book B) = {2, 7, 9}</p>
+
+          <p>Now the bit array looks like this</p>
+
+          <p>arr = [0, 1, 1, 0, 0, 1, 0, 1, 1, 1]</p>
+
+          <p>
+            Now, if we want to check whether Book 3 is in the store, we can hash
+            the book’s ISBN and take the 3-bit array positions like below:
+          </p>
+
+          <p>H (Book 3) = {3, 5, 9}</p>
+
+          <p>arr[3] = 0, arr[5] = 1, arr[9] = 1</p>
+
+          <p>
+            There are one-bit positions that are not set to 1, and therefore
+            Book 3 is not in the book store.
+          </p>
+
+          <p>But if another book, Book 4, gives the hashes like this:</p>
+
+          <p>H (Book 4) = {2, 5, 9}</p>
+
+          <p>arr[2] = 1, arr[5] = 1, arr[9] = 1</p>
+
+          <p>
+            In this case, we can’t definitely say that the book is definitely in
+            the store but with a false positive probability.
+          </p>
+
+          <h2>Choosing Good Hash Functions</h2>
+
+          <p>
+            It is important to design a k-different hash function for a bloom
+            filter, but it can be challenging for large k values. A good hash
+            function should be uniformly distributed and have little to no
+            correlation with other hash functions. When using large m and k
+            values, the independence constraint on hash functions can be relaxed
+            with only a small increase in the false positive rate. Uniformity
+            helps reduce the chance of collisions, thereby reducing the false
+            positive rate.
+          </p>
+
+          <p>
+            We can use cryptographic hash functions such as SHA-256 or md5 for
+            their stability and uniform distribution, but they are slower, which
+            can become a bottleneck for large systems with high request volumes.
+          </p>
+
+          <p>
+            The best approach is to use non-cryptographic hash functions such as
+            Murmur, FNV Series, Jenkins, and City hash functions. These hash
+            functions are straightforward and provide uniformity, allowing for
+            fast calculation of hashes.
+          </p>
+
+          <h2>Performance Consideration</h2>
+
+          <p>
+            Bloom filters have this unusual property that the time needed to
+            insert an element and test the membership of an element is fixed.
+            have O(k) complexity. Complexity is independent of the number of
+            elements in the set. Hardware implementation of these bloom filters
+            can provide excessively increased performance because k-lookups are
+            independent and can be parallelized at the hardware level.
+          </p>
+
+          <p>
+            Also, bloom filters are very memory/space efficient because they
+            maintain a fixed-size bit array independent of the number of
+            elements in the set.
+          </p>
+
+          <h2>Optimizing Bloom Filter</h2>
+
+          <p>
+            If we assume that each hash function selects each array position
+            with equal probability and there is an m-bit array with k-hash
+            functions, we can calculate the False Positive Rate using the below
+            formula:
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*wYp5gGCIqIaABMjb-d99sA.png"
+            alt="False Positive Rate"
+          />
+
+          <p>
+            Assuming we have a close approximation to the uniformity of hash
+            functions, we have that the probability of false positives decreases
+            as m increases and increases as n increases.
+          </p>
+
+          <p>
+            The optimal number of hash functions k for given m and n, that
+            minimize the false positive rate probability is
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:502/format:webp/1*BveUhKacg2a0xfrQIJRf8w.png"
+            alt="Optimal k"
+          />
+
+          <p>
+            By doing some mathematics, we can easily achieve the optimal number
+            of hash functions and bit array length for a given false positive
+            rate like the below:
+          </p>
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:464/format:webp/1*4O7VO0YNF4HQu91ipLYvwA.png"
+            alt="Optimal m and k"
+          />
+
+          <img
+            src="https://miro.medium.com/v2/resize:fit:514/format:webp/1*g5_DHZCSCfGrZCqe8XJ-4Q.png"
+            alt="Optimal m and k"
+          />
+
+          <p>
+            This means that for a given false positive rate, the length of the
+            boom filter array m is proportionate to the number of elements being
+            filtered, and the number of hash functions only depends on the
+            target false positive rate.
+          </p>
+
+          <p>Predicting the value m and l for a given application:</p>
+
+          <ol>
+            <li>
+              Estimate the number of elements (n) your system is going to handle
+              in the future.
+            </li>
+            <li>
+              Determine the false positive rate appropriate to your application.
+              Be cautious when choosing a low false positive rate, it can
+              increase the bit array size.
+            </li>
+            <li>
+              Calculate the bit array size using estimated n and false positive
+              rate. Which can affect the space complexity of the filter.
+            </li>
+            <li>
+              Calculate the value k using a false positive rate. Which can
+              affect the time complexity of the filter.
+            </li>
+          </ol>
+
+          <b>Example: </b>
+
+          <p>
+            For 1,000,000,000 elements (n = 1000000000) and a 1% false positive
+            rate (e = 0.01),
+          </p>
+
+          <p>
+            <strong>Bit array size (m</strong>) = 9585058377.37 = 8.9268 GB
+            nearly
+          </p>
+
+          <p>
+            <strong>The number of hash functions (k) </strong>= 6.64 = 7 hash
+            functions.
+          </p>
+
+          <p>
+            So, an<strong> 8.92 GB</strong> bit array with
+            <strong>7 hash functions</strong> is enough for maintaining a
+            <strong> 1% false positive rate</strong> for a system with a
+            <strong>billion elements.</strong>
+          </p>
+
+          <h2>Bloom Filter Applications</h2>
+
+          <ol>
+            <li>
+              The famous content delivery provider Akamai Technologies uses a
+              bloom filter to prevent ‘One-Hit Wonders’ from being stored in its
+              disk caches. One hit wonder are web resources requested by the
+              user just once. Something that Akamai found applied to nearly
+              three-quarters of their caching infrastructure. Using bloom
+              filters to detect a second request for a web resource and caching
+              that resource only prevents one-hit wonders from entering disk
+              caches significantly.
+            </li>
+
+            <li>
+              The Google Chrome web browser previously used the bloom filter for
+              its Safe Browsing feature to identify malicious URLs. The bloom
+              filter helps quickly check if a URL is potentially harmful without
+              sending the actual URL to Google servers.
+            </li>
+
+            <li>
+              The medium used bloom filters in its recommendation systems to
+              avoid showing those articles that have already been seen by the
+              user.
+            </li>
+
+            <li>
+              Google Big Table, HBase Apache Cassandra, PostgreSQL, and ScyllaDB
+              use bloom filters to reduce the disk lookups for non-existent rows
+              and columns by improving the query performance.
+            </li>
+
+            <li>
+              Bitcoin uses Bloom Filters to speed up wallet synchronization
+              until privacy vulnerabilities with the implementation of the Bloom
+              Filter were discovered.
+            </li>
+          </ol>
+
+          <h2>Drawbacks of Bloom Filters</h2>
+
+          <ul>
+            <li>
+              False positive: highlighted downside of the bloom filter while it
+              can’t be avoided by nature. But it can be reduced using optimal
+              parameters.
+            </li>
+            <li>
+              Need for multiple hash functions: bloom filter needs independent,
+              uniformly distributed hash functions that are relatively easy to
+              calculate to maintain the efficiency of hashing. Finding such hash
+              functions could be a complex task.
+            </li>
+            <li>
+              Inflexibility: The size of the bit array is fixed. It cannot be
+              shrunk or expanded during production. It must be designated during
+              its development time. For the bloom filter to be successful, the
+              amount of data that will be added to the system must be stated or
+              made obvious in advance.
+            </li>
+            <li>
+              Only existing probability can be obtained from the filter, not the
+              original data (nevertheless, this is not a requirement of a bloom
+              filter).
+            </li>
+          </ul>
+
+          <h2>Use Cases of Bloom Filters</h2>
+
+          <ul>
+            <li>
+              <strong>Checking for email ID/username availability:</strong> for
+              large-scale systems with billions of records, checking the
+              availability of usernames in its distributed data storage systems
+              would be impractical with thousands of requests per second. Bloom
+              filters can permit the system to roughly estimate the individual
+              ID’s availability.
+            </li>
+
+            <li>
+              <strong>Recommending New Content</strong>: Large content streaming
+              systems like Medium store their content distributed across data
+              centers around the world. So, when an algorithm proposes content
+              for a user, it is impractical to crunch the database to check
+              whether the user has already viewed that content before. Bloom
+              filters can help at that point.
+            </li>
+
+            <li>
+              <strong>Cache Filtering:</strong> Content Delivery Networks deploy
+              their web caches around the world to cache and serve web resources
+              to users with greater performance and reliability. Analysis shows
+              that nearly three-quarters of the URLs accessed from a typical web
+              cache are “One Hit Wonders"—that are accessed by only one and
+              never again. It’s wasteful of disk capacity to store one-hit
+              wonders on a cache system. To prevent one-hit wonders from
+              entering the web cache, we can deploy a bloom filter to keep track
+              of the web URLs that are accessed by users. A web resource is
+              cached only when it has been accessed at least once before,
+              significantly reducing the write workload on the disks.
+            </li>
+
+            <li>
+              <strong>Ensuring the security level of a suspicious URL:</strong>
+              If you’ve deployed a cloud security system that prevents you from
+              viewing malicious URLs. This service could store an archive of
+              billions of potentially hazardous URLs and process several
+              millions of requests per minute. In this situation, looking for a
+              database or cache is impossible. Bloom filter can be used to
+              probabilistically check the URL’s security.
+            </li>
+          </ul>
+
+          <h2>Counting Bloom Filter</h2>
+
+          <p>
+            One significant drawback of the simple bloom filter is that once we
+            add an element to the set, we can’t remove it from it. Either we
+            have to rebuild the entire bloom filter from scratch or we have to
+            acknowledge the element persistent in the set forever. Counting
+            bloom filter is an extension for the bloom filter which provides a
+            way to implement a delete operation on a bloom filter without
+            creating a bloom filter fresh.
+          </p>
+
+          <p>
+            In a counting bloom filter, single-bit array positions are extended
+            to multi-bit array positions. The insertion operation is extended to
+            increment the value of each array position the membership check
+            process checks that each of the hashed positions is non-zero. The
+            delete operation consists of decrementing the value of each hashed
+            array position.
+          </p>
+
+          <p>
+            Arithmetic overflow of array positions is a problem and the array
+            position should be large enough to make this rare. Because using a
+            multi-bit array counting bloom filter consumes more space than a
+            simple bloom filter.
+          </p>
+
+          <h2>Conclusion</h2>
+
+          <p>
+            The Bloom filter is a highly efficient probabilistic data structure
+            designed for set membership testing in scenarios where traditional
+            data structures would require impractically large amounts of memory.
+            It offers constant-time performance for both inserting and querying
+            elements, making it ideal for applications with significant memory
+            constraints.
+          </p>
+
+          <p>
+            Real-world applications of Bloom filters include Google Chrome’s
+            Safe Browsing feature, Akamai’s CDN caching filtering, the Medium
+            recommendation system, Wallet synchronization in Bitcoin, and
+            database querying. Designing an effective Bloom filter involves
+            making trade-offs, such as selecting suitable hash functions,
+            determining optimal filter parameters for specific contexts, and
+            addressing design issues. However, through careful calculation and
+            analysis, it is possible to significantly reduce the false positive
+            rate.
+          </p>
+
+          <h2>References and additional readings</h2>
+
+          <ol>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Bloom_filter"
+                >https://en.wikipedia.org/wiki/Bloom_filter</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://harish-bhattbhatt.medium.com/bloom-filter-application-and-implementation-52c6d4512c21?source=post_page-----d6e32d5225a8---------------------------------------"
+                >https://harish-bhattbhatt.medium.com/bloom-filter-application-and-implementation-52c6d4512c21</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.spiceworks.com/tech/big-data/articles/what-is-a-bloom-filter/?source=post_page-----d6e32d5225a8---------------------------------------"
+                >https://www.spiceworks.com/tech/big-data/articles/what-is-a-bloom-filter</a
+              >
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/article.js" />
+  </body>
+</html>
