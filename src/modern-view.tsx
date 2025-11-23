@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
-  Github, 
   Linkedin, 
   Mail, 
   ExternalLink, 
@@ -15,8 +14,11 @@ import {
   Globe,
   LayoutList,
   Tablet,
-  Monitor
+  Monitor,
+  Github
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptop, faFileLines, faGripHorizontal, faTerminal, faLandMineOn, faLandmark, faFile } from '@fortawesome/free-solid-svg-icons';
 
 const ModernView = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -62,8 +64,8 @@ const ModernView = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-slate-800 font-sans selection:bg-slate-200 selection:text-slate-900 relative">
-      <div className="absolute top-0 right-0 p-8 z-10">
+    <div className="min-h-screen bg-[#fcfcfc] text-slate-800 font-sans selection:bg-slate-200 selection:text-slate-900 relative pt-8 lg:pt-0">
+      <div className="absolute top-0 right-0 p-4 sm:p-8 z-10">
         <PageViewNavigation />
       </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
@@ -133,14 +135,44 @@ const ModernView = () => {
               </h2>
               <div className="prose prose-slate max-w-none text-slate-600">
                 <p className="leading-relaxed">
-                  I am a final-year Computer Science and Engineering undergraduate at the University of Moratuwa with a strong foundation in 
-                  <span className="font-medium text-slate-800"> software engineering, distributed systems, system design, and cloud computing.</span>
+                I am a final-year Computer Science and Engineering undergraduate at the University of Moratuwa with a strong foundation in  <span className="font-medium text-slate-800">software engineering, distributed systems, computer security, networks, computer architecture, and cloud computing.</span>
+                
                 </p>
                 <p className="mt-4 leading-relaxed">
-                  Passionate about both learning and sharing knowledge, I have a growing interest in academic collaboration and mentoring. 
-                  My experience spans practical software development in industry settings and systems research. I am highly motivated to contribute 
-                  to the academic community and foster an engaging learning environment.
+                I specialize in building layers of abstraction to provide concrete solutions, with a specific focus on engineering the core systems that other applications rely on. My passion for computer science spans the entire stack, from high-level system design to low-level architecture. With experience ranging from industrial software development to academic research, I am a continuous learner dedicated to knowledge sharing. I am highly motivated to contribute to the global software landscape while collaborating with the academic community to drive further innovation.
+
                 </p>
+              </div>
+            </section>
+
+             {/* Education Section */}
+             <section id="education" className="scroll-mt-24">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6 flex items-center gap-2">
+                <BookOpen className="w-4 h-4" /> Education
+              </h2>
+              
+              <div className="space-y-8">
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:justify-between mb-1">
+                    <h3 className="font-semibold text-slate-900">B.Sc. Eng (Hons) Computer Science & Engineering</h3>
+                    <span className="text-sm text-slate-500 font-mono">2022 - Present</span>
+                  </div>
+                  <div className="text-slate-700">University of Moratuwa</div>
+                  <div className="mt-2 text-sm text-slate-600">
+                    <span className="font-medium text-slate-800">CGPA: 3.90/4.0(6 Semesters)</span> (Dean's List: Sem 1, 2, 3, 4)
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:justify-between mb-1">
+                    <h3 className="font-semibold text-slate-900">G.C.E. Advanced Level</h3>
+                    <span className="text-sm text-slate-500 font-mono">2017 - 2020</span>
+                  </div>
+                  <div className="text-slate-700">G/Dharmasoka College, Ambalangoda</div>
+                  <div className="mt-2 text-sm text-slate-600">
+                    District Rank: 3 | Island Rank: 11 (Physical Stream)
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -170,6 +202,27 @@ const ModernView = () => {
                   </ul>
                 </div>
               </div>
+
+              <div className="space-y-10 mt-10">
+                <div className="group relative border-l-2 border-slate-200 pl-6 hover:border-slate-400 transition-colors">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900">Teaching Assistant</h3>
+                    <span className="text-sm font-mono text-slate-500">Aug 2025 - Nov 2025</span>
+                  </div>
+                  <div className="text-base text-slate-700 font-medium mb-4">University of Moratuwa</div>
+                  <ul className="list-disc list-outside ml-4 space-y-2 text-slate-600 text-sm leading-relaxed marker:text-slate-300">
+                    <li>
+                      Led weekly lab sessions for 30+ students covering CS2033 Data Communication and Networks Module.
+                    </li>
+                    <li>
+                      Held office hours to assist students with debugging network programming assignments and understanding the concepts.
+                    </li>
+                    <li>
+                      Graded assignments and exams with detailed feedback.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </section>
 
             {/* Projects Section */}
@@ -183,31 +236,37 @@ const ModernView = () => {
                   title="BitMonX Discovery Server"
                   tech="Node.js, Ejs, JavaScript"
                   description="A lightweight, centralized service discovery server with load balancing and API gateway features for Node.js microservices. Published as an NPM library."
-                  link="#"
+                  link="https://github.com/ShavinAnjithaAlpha/BitMonX-discovery-server"
+                />
+                <ProjectCard 
+                  title="Cryptographically Secure Electronic Voting System"
+                  tech="Java, PostgreSQL, ReactNative, React/Typescript"
+                  description="A secure and transparent electronic voting system with cryptographic verification of votes. Implemented using Java, PostgreSQL, ReactNative, React/Typescript."
+                  link="https://github.com/ShavinAnjithaAlpha/Cryptographically-Secure-Electronic-Voting-System"
                 />
                 <ProjectCard 
                   title="PixelStream"
                   tech="Node.js, React, MySQL, Redis"
                   description="A global photo streaming platform for photographers to upload, share, and collaborate. Features a high-performance backend with Redis caching."
-                  link="#"
+                  link="https://github.com/ShavinAnjithaAlpha/PixelStream"
                 />
                 <ProjectCard 
                   title="Game of Life Simulation"
                   tech="JavaScript, HTML5 Canvas"
                   description="A zero-player cellular automaton simulation. Implemented a custom JS game engine and optimized canvas rendering for pattern evolution."
-                  link="#"
+                  link="https://github.com/ShavinAnjithaAlpha/Game-of-Life-Simulation"
                 />
                 <ProjectCard 
                   title="MoraUXPlore 2.0 Official Website"
                   tech="Node.js, React, MySQL, Azure"
                   description="Architected the backend and dashboard for a design competition portal handling registrations and submissions."
-                  link="#"
+                  link="https://github.com/ShavinAnjithaAlpha/MoraUXPlore-2.0-Official-Website"
                 />
                  <ProjectCard 
                   title="Micromouse (Robofest '23)"
                   tech="Arduino, C++"
                   description="Designed algorithms and software for an autonomous maze-solving robot. Competed as a finalist."
-                  link="#"
+                  link="https://github.com/ShavinAnjithaAlpha/Micromouse-Robofest-2023"
                 />
               </div>
             </section>
@@ -219,43 +278,14 @@ const ModernView = () => {
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <SkillCategory title="Languages" items={["Java", "Python", "JavaScript", "TypeScript", "C++", "C", "SQL"]} />
-                <SkillCategory title="Web Frameworks" items={["Spring Boot", "React", "Node.js", "Express", "Redux"]} />
+                <SkillCategory title="Languages" items={["Java", "Python", "JavaScript and TypeScript", "C++", "C", "SQL"]} />
+                <SkillCategory title="Web Frameworks" items={["Spring Boot", "React", "Node.js", "Express", "Redux", "Electron"]} />
                 <SkillCategory title="Databases & Cloud" items={["MySQL", "PostgreSQL", "MongoDB", "Redis", "Kafka", "AWS", "Azure"]} />
                 <SkillCategory title="Tools & Security" items={["Docker", "Git", "Wireshark", "Nmap", "Linux", "Packet Tracer"]} />
               </div>
             </section>
 
-            {/* Education Section */}
-            <section id="education" className="scroll-mt-24">
-              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6 flex items-center gap-2">
-                <BookOpen className="w-4 h-4" /> Education
-              </h2>
-              
-              <div className="space-y-8">
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between mb-1">
-                    <h3 className="font-semibold text-slate-900">B.Sc. Eng (Hons) Computer Science & Engineering</h3>
-                    <span className="text-sm text-slate-500 font-mono">2022 - Present</span>
-                  </div>
-                  <div className="text-slate-700">University of Moratuwa</div>
-                  <div className="mt-2 text-sm text-slate-600">
-                    <span className="font-medium text-slate-800">CGPA: 3.91/4.0</span> (Dean's List: Sem 1, 2, 3, 4)
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between mb-1">
-                    <h3 className="font-semibold text-slate-900">G.C.E. Advanced Level</h3>
-                    <span className="text-sm text-slate-500 font-mono">2017 - 2020</span>
-                  </div>
-                  <div className="text-slate-700">G/Dharmasoka College, Ambalangoda</div>
-                  <div className="mt-2 text-sm text-slate-600">
-                    District Rank: 3 | Island Rank: 11 (Physical Stream)
-                  </div>
-                </div>
-              </div>
-            </section>
+           
 
              {/* Achievements Section */}
              <section id="achievements" className="scroll-mt-24">
@@ -320,14 +350,14 @@ const PageViewNavigation = () => {
     return (
       <button
         onClick={handleClick}
-        className={`flex items-center justify-center w-full p-2 text-sm font-medium rounded-lg transition-colors duration-200 group 
+        className={`flex items-center justify-center w-full p-2 text-sm font-medium rounded-lg transition-colors duration-200 group
           ${currentPath === path
             ? 'bg-slate-900 text-white'
             : 'text-slate-500 hover:bg-slate-100 hover:text-slate-700'
         }`}
         title={label}
       >
-        <Icon className={`w-5 h-5 ${currentPath === path ? 'text-white' : 'text-slate-400 group-hover:text-slate-600'}`} />
+        <FontAwesomeIcon icon={Icon} className={`w-5 h-5 ${currentPath === path ? 'text-white' : 'text-slate-400 group-hover:text-slate-600'}`} />
         <span className="sr-only">{label}</span>
       </button>
     );
@@ -335,9 +365,9 @@ const PageViewNavigation = () => {
 
   return (
     <div className="flex gap-4">
-      <PageViewNavItem path="/" label="Modern View" Icon={LayoutList} />
-      <PageViewNavItem path="/classic" label="Classic View" Icon={Tablet} />
-      <PageViewNavItem path="/file-system" label="File System View" Icon={Monitor} />
+      <PageViewNavItem path="/" label="Modern View" Icon={faGripHorizontal} />
+      <PageViewNavItem path="/classic" label="Classic View" Icon={faFile} />
+      <PageViewNavItem path="/file-system" label="File System View" Icon={faTerminal} />
     </div>
   );
 };
