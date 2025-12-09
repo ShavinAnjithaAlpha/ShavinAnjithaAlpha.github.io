@@ -65,9 +65,9 @@ const ModernView = () => {
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-slate-800 font-sans selection:bg-slate-200 selection:text-slate-900 relative pt-8 lg:pt-0">
-      <div className="absolute top-0 right-0 p-4 sm:p-8 z-10">
+      {/* <div className="absolute top-0 right-0 p-4 sm:p-8 z-10">
         <PageViewNavigation />
-      </div>
+      </div> */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           
@@ -97,16 +97,16 @@ const ModernView = () => {
               </div>
 
               <div className="flex gap-4 pt-2">
-                <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
+                <a href="https://github.com/ShavinAnjithaAlpha" className="text-slate-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-[#0077b5] transition-colors" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/shavin-anjitha-chandrawansha-555323229/" className="text-slate-400 hover:text-[#0077b5] transition-colors" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-emerald-600 transition-colors" aria-label="Medium">
+                <a href="https://medium.com/@shavinanjitha" className="text-slate-400 hover:text-emerald-600 transition-colors" aria-label="Medium">
                   <BookOpen className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Website">
+                <a href="https://shavinanjitha.me" className="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Website">
                   <Globe className="w-5 h-5" />
                 </a>
               </div>
@@ -185,19 +185,14 @@ const ModernView = () => {
               <div className="space-y-10">
                 <div className="group relative border-l-2 border-slate-200 pl-6 hover:border-slate-400 transition-colors">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-slate-900">Software Engineering Intern</h3>
-                    <span className="text-sm font-mono text-slate-500">Dec 2024 - May 2025</span>
+                    <h3 className="text-lg font-semibold text-slate-900">Associate Software Engineer</h3>
+                    <span className="text-sm font-mono text-slate-500">Jun 2025 - Nov 2025</span>
                   </div>
-                  <div className="text-base text-slate-700 font-medium mb-4">WSO2, Colombo</div>
+                  <div className="text-base text-slate-700 font-medium mb-4">Donely.ai</div>
                   <ul className="list-disc list-outside ml-4 space-y-2 text-slate-600 text-sm leading-relaxed marker:text-slate-300">
                     <li>
-                      Developed and published a <strong>Ballerina language library</strong> for the HubSpot Contacts API, ensuring idiomatic client connectors and complete documentation.
-                    </li>
-                    <li>
-                      Researched and implemented a <strong>global distributed counter mechanism</strong> for WSO2 API Manager to improve throttling accuracy in distributed deployments.
-                    </li>
-                    <li>
-                      Conducted in-depth analysis of distributed systems concepts (CRDTs, gossip protocols) and executed load tests to benchmark performance.
+                      Developed a desktop application for autonomous computer-use agent with capable of application controlling from scratch.
+                      Also intergrate the backend services to the desktop application and contribute to some backend components.
                     </li>
                   </ul>
                 </div>
@@ -223,7 +218,32 @@ const ModernView = () => {
                   </ul>
                 </div>
               </div>
+
+              <div className="space-y-10 mt-10">
+                <div className="group relative border-l-2 border-slate-200 pl-6 hover:border-slate-400 transition-colors">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900">Software Engineering Intern</h3>
+                    <span className="text-sm font-mono text-slate-500">Dec 2024 - May 2025</span>
+                  </div>
+                  <div className="text-base text-slate-700 font-medium mb-4">WSO2, Colombo</div>
+                  <ul className="list-disc list-outside ml-4 space-y-2 text-slate-600 text-sm leading-relaxed marker:text-slate-300">
+                    <li>
+                      Developed and published a <strong>Ballerina language library</strong> for the HubSpot Contacts API, ensuring idiomatic client connectors and complete documentation.
+                    </li>
+                    <li>
+                      Researched and implemented a <strong>global distributed counter mechanism</strong> for WSO2 API Manager to improve throttling accuracy in distributed deployments.
+                    </li>
+                    <li>
+                      Conducted in-depth analysis of distributed systems concepts (CRDTs, gossip protocols) and executed load tests to benchmark performance.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              
             </section>
+
+            
 
             {/* Projects Section */}
             <section id="projects" className="scroll-mt-24">
@@ -232,18 +252,25 @@ const ModernView = () => {
               </h2>
               
               <div className="grid grid-cols-1 gap-8">
+              <ProjectCard 
+                  title="Cryptographically Secure Electronic Voting System"
+                  tech="Java, PostgreSQL, ReactNative, React/Typescript, AWS"
+                  description="a platform engineered to provide secure, verifiable, and coercion-resistant electronic voting. The system addresses fundamental challenges in e-voting, including voter privacy, ballot secrecy, and protection against vote-buying and coercion. It is built on a distributed microservices architecture and employs advanced cryptographic techniques to ensure that individual votes remain anonymous while allowing for a universally verifiable final tally."
+                  link="https://github.com/ShavinAnjithaAlpha/election-voting-system"
+                />
+              <ProjectCard 
+                  title="SWIM-mesh Library"
+                  tech="Java, Netty"
+                  description="SWIM-Core is a high-performance, modular Java library that implements the SWIM protocol for scalable, weakly-consistent, infection-style membership. It offers cluster membership management, gossip-based failure detection, and suspicion-based false-positive mitigation. The library features a fully extensible transport layer, allowing users to integrate their preferred UDP/TCP/Netty implementations, and includes optional simulation and visualization tools for experimenting with SWIM dynamics. SWIM-Core is designed for embedding into distributed systems, microservices, and research environments."
+                  link="https://github.com/ShavinAnjithaAlpha/swim-mesh"
+                />
                 <ProjectCard 
                   title="BitMonX Discovery Server"
                   tech="Node.js, Ejs, JavaScript"
-                  description="A lightweight, centralized service discovery server with load balancing and API gateway features for Node.js microservices. Published as an NPM library."
+                  description="BitMonX Discovery Server (BDS) is a server designed to facilitate the discovery of services within a network environment, especially in a multi-service (microservice) setup. It works in tandem with the BitMonX Discovery Client (BDC) which is integrated with the services. BDS is a lightweight discovery server built entirely using Node.js. Once the services are initialized with the BDC client, they can register themselves and connect with the BDS discovery server to both announce their presence and locate other services running on the network."
                   link="https://github.com/ShavinAnjithaAlpha/BitMonX-discovery-server"
                 />
-                <ProjectCard 
-                  title="Cryptographically Secure Electronic Voting System"
-                  tech="Java, PostgreSQL, ReactNative, React/Typescript"
-                  description="A secure and transparent electronic voting system with cryptographic verification of votes. Implemented using Java, PostgreSQL, ReactNative, React/Typescript."
-                  link="https://github.com/ShavinAnjithaAlpha/Cryptographically-Secure-Electronic-Voting-System"
-                />
+               
                 <ProjectCard 
                   title="PixelStream"
                   tech="Node.js, React, MySQL, Redis"
@@ -253,8 +280,8 @@ const ModernView = () => {
                 <ProjectCard 
                   title="Game of Life Simulation"
                   tech="JavaScript, HTML5 Canvas"
-                  description="A zero-player cellular automaton simulation. Implemented a custom JS game engine and optimized canvas rendering for pattern evolution."
-                  link="https://github.com/ShavinAnjithaAlpha/Game-of-Life-Simulation"
+                  description="2D web-based simulation of Conway's Game of Life using JavaScript and HTML5 Canvas. The game is a zero-player cellular automaton, where evolution is driven by its initial state. The project includes a simple JS based game engine and HTML5 Canvas based visual rendering, allowing users to create and observe the evolution of patterns."
+                  link="https://github.com/ShavinAnjithaAlpha/game-of-life"
                 />
                 <ProjectCard 
                   title="MoraUXPlore 2.0 Official Website"
@@ -266,7 +293,7 @@ const ModernView = () => {
                   title="Micromouse (Robofest '23)"
                   tech="Arduino, C++"
                   description="Designed algorithms and software for an autonomous maze-solving robot. Competed as a finalist."
-                  link="https://github.com/ShavinAnjithaAlpha/Micromouse-Robofest-2023"
+                  link="https://github.com/TharushaDinujaya/MicroMouse"
                 />
               </div>
             </section>
@@ -376,7 +403,9 @@ const ProjectCard = ({ title, tech, description, link }) => (
   <div className="group block p-6 bg-white border border-slate-200 rounded-lg hover:border-slate-300 hover:shadow-sm transition-all">
     <div className="flex items-center justify-between mb-2">
       <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">{title}</h3>
-      <ExternalLink className="w-4 h-4 text-slate-300 group-hover:text-slate-500" />
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="w-4 h-4 text-slate-300 group-hover:text-slate-500" />
+      </a>
     </div>
     <div className="text-xs font-mono text-slate-500 mb-3">{tech}</div>
     <p className="text-sm text-slate-600 leading-relaxed">{description}</p>
