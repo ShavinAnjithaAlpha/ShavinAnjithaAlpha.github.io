@@ -88,11 +88,7 @@ const ModernView = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:shavin.21@cse.mrt.ac.lk" className="hover:underline">shavin.21@cse.mrt.ac.lk</a>
-                </div>
-                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+94 778542602</span>
+                  <a href="mailto:shavinanjitha.ch@gmail.com" className="hover:underline">shavinanjitha.ch@gmail.com</a>
                 </div>
               </div>
 
