@@ -342,11 +342,96 @@ const ModernView = () => {
                 <div className="space-y-4">
                   <h3 className="font-semibold text-slate-900 text-sm uppercase">Certifications</h3>
                    <ul className="space-y-3 text-sm text-slate-600">
-                    <li>Network Support and Security (Cisco)</li>
-                    <li>Supervised ML (Stanford)</li>
-                    <li>Developing Backend Apps with Node.js (IBM)</li>
-                    <li>Google Cloud Computing Foundations</li>
-                    <li>Google Cybersecurity Professional Certificate</li>
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/eadcf5bc-af81-4469-aa47-4c60cb3bd0ff/linked_in_profile"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Network Support and Security by Cisco
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/809e2cbb-da8a-4f0a-8108-c2c122d21249/linked_in_profile"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Network Technician Career Path by Cisco
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/60f0cfbd-f78f-44d1-9758-261876f11216/linked_in_profile"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Networking Devices and Initial Config. by Cisco
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://drive.google.com/file/d/1uveOw5M1-36j0sRNyyrJ8jfREOXWrb4o/view?usp=sharing"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        AWS Cloud Practitioner Essentials By AWS
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://coursera.org/share/12fe8ba31f2e62a8696fc26838c073fa"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Supervised ML (Stanford)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://courses.edx.org/certificates/197f24a0ce744ce09c558c646aa070fe"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        OOP using C++ By edX
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/certificate/DZAXS58TRM2E"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Developing Backend Apps with Node.js (IBM)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://courses.edx.org/certificates/bb87bfe8914244e4ad63cb9e76b5d1c3"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Google Cloud Computing Foundations
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-slate-700 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Google Cybersecurity Professional Certificate (Ongoing)
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
